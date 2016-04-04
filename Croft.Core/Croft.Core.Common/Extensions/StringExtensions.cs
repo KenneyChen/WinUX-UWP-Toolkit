@@ -28,11 +28,14 @@ namespace WinUX.Extensions
             if (string.IsNullOrWhiteSpace(text))
                 return true;
 
-            if (text == "01/01/0001 00:00:00")
-                return true;
+            DateTime date;
 
-            if (text == "01/01/0001")
+            var parsedDate = DateTime.TryParse(text, out date);
+
+            if (parsedDate && date.Equals(DateTime.MinValue))
+            {
                 return true;
+            }
 
             return text == "0";
         }

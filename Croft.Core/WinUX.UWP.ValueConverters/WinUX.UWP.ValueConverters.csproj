@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9EBF54FD-4EBF-4F49-96A6-69279A2D8DDF}</ProjectGuid>
+    <ProjectGuid>{F77C5AE3-4028-4AD7-A4D2-2CB4FCA60032}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinUX</RootNamespace>
-    <AssemblyName>WinUX.UWP</AssemblyName>
+    <AssemblyName>WinUX.UWP.ValueConverters</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -35,6 +35,28 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -80,64 +102,36 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>..\Rules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Properties\Croft.Core.UWP.rd.xml" />
+    <Compile Include="Xaml\Converters\BooleanFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToDarkAccentBrushConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToDarkAccentColorConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToLightAccentBrushConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToLightAccentColorConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToPrimaryAccentBrushConverter.cs" />
+    <Compile Include="Xaml\Converters\Colors\BrushToPrimaryAccentColorConverter.cs" />
+    <Compile Include="Xaml\Converters\DateTimeFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\EmptyStringToVisibilityConverter.cs" />
+    <Compile Include="Xaml\Converters\EnumToVisibilityConverter.cs" />
+    <Compile Include="Xaml\Converters\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="Xaml\Converters\MetricHeightFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\MetricWeightFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\StringFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\TimeSpanFormatConverter.cs" />
+    <EmbeddedResource Include="Properties\WinUX.UWP.ValueConverters.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.Common\WinUX.Common.csproj">
-      <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
-      <Name>WinUX.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.Behaviors\WinUX.UWP.Behaviors.csproj">
-      <Project>{198bcc8d-ae93-4836-8f2d-17d837e6d0b2}</Project>
-      <Name>WinUX.UWP.Behaviors</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Core\WinUX.UWP.Core.csproj">
       <Project>{c6216e8d-f810-49c8-99e5-320350fdb3f2}</Project>
       <Name>WinUX.UWP.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.StateTriggers\WinUX.UWP.StateTriggers.csproj">
-      <Project>{efa1ed9e-ac60-4a9e-b5d7-efeecce11cef}</Project>
-      <Name>WinUX.UWP.StateTriggers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.Validation\WinUX.UWP.Validation.csproj">
-      <Project>{d8ce4ea6-0f2e-42d7-b8b1-4254ef6f5412}</Project>
-      <Name>WinUX.UWP.Validation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.ValueConverters\WinUX.UWP.ValueConverters.csproj">
-      <Project>{f77c5ae3-4028-4ad7-a4d2-2cb4fca60032}</Project>
-      <Name>WinUX.UWP.ValueConverters</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -6,14 +6,12 @@
 
 namespace WinUX.Sample
 {
+    using NotificationsExtensions.Toasts;
+
     using System;
 
     using Windows.UI.Notifications;
     using Windows.UI.Xaml;
-
-    using WinUX.Messaging.Notifications.Actions;
-    using WinUX.Messaging.Notifications.Content;
-    using WinUX.Messaging.Notifications.Enums;
 
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -30,26 +28,25 @@ namespace WinUX.Sample
 
         private void OnSnoozeAndDismissClicked(object sender, RoutedEventArgs e)
         {
-            var notification = new NotificationContent
+            var notification = new ToastContent
             {
-                Visual = new NotificationVisual
+                Visual = new ToastVisual
                 {
-                    Title = new NotificationText
+                    TitleText = new ToastText
                     {
                         Text = "Hello, World!"
                     },
-                    BodyLineOne = new NotificationText
+                    BodyTextLine1 = new ToastText
                     {
                         Text = string.Format("Alarm - {0}", DateTime.Now.ToString("hh:mm tt"))
                     }
                 },
                 Launch = "HelloWorldAlarm",
-                Scenario = NotificationScenario.Reminder,
-                Actions = new SnoozeAndDismissAction()
+                Scenario = ToastScenario.Reminder,
+                Actions = new ToastActionsSnoozeAndDismiss()
             };
 
-            var xml = notification.ToXmlDocument();
-            ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(xml));
+            ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(notification.GetXml()));
         }
     }
 }
