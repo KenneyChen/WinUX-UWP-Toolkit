@@ -129,7 +129,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.UWP\WinUX.UWP.csproj">
+    <ProjectReference Include="..\WinUX.UWP\WinUX.UWP.csproj">
       <Project>{9ebf54fd-4ebf-4f49-96a6-69279a2d8ddf}</Project>
       <Name>WinUX.UWP</Name>
     </ProjectReference>
