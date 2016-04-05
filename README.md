@@ -22,7 +22,7 @@ If you're not wanting the complete collection, take the bits you need!
 - ***WinUX.UWP.ValueConverters:*** [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.ValueConverters.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.ValueConverters/)
 
 ## FAQ
-### Can I use this in my own project?
+### Can I use WinUX in my own project?
 Of course you can. Feel free to download the source and have a play around with it, or alternatively, there is a Nuget package available for you to add straight into your projects through Visual Studio.
 
 ### I've got some bits I'd like to add, can I?
