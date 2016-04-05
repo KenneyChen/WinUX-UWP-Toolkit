@@ -119,10 +119,6 @@
     <EmbeddedResource Include="Properties\WinUX.UWP.Validation.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.Common\WinUX.Common.csproj">
-      <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
-      <Name>WinUX.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Core\WinUX.UWP.Core.csproj">
       <Project>{c6216e8d-f810-49c8-99e5-320350fdb3f2}</Project>
       <Name>WinUX.UWP.Core</Name>

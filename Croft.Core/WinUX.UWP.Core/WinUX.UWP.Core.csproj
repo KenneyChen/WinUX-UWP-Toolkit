@@ -130,7 +130,7 @@
     <EmbeddedResource Include="Properties\WinUX.UWP.Core.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.Common\WinUX.Common.csproj">
+    <ProjectReference Include="..\WinUX.Common\WinUX.Common.csproj">
       <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
       <Name>WinUX.Common</Name>
     </ProjectReference>

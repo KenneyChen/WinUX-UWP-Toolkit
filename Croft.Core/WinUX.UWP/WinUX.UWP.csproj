@@ -112,10 +112,6 @@
     <Content Include="Properties\Croft.Core.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.Common\WinUX.Common.csproj">
-      <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
-      <Name>WinUX.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Behaviors\WinUX.UWP.Behaviors.csproj">
       <Project>{198bcc8d-ae93-4836-8f2d-17d837e6d0b2}</Project>
       <Name>WinUX.UWP.Behaviors</Name>

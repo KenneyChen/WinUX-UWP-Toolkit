@@ -114,7 +114,7 @@
     <EmbeddedResource Include="Properties\WinUX.UWP.StateTriggers.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Croft.Core.Common\WinUX.Common.csproj">
+    <ProjectReference Include="..\WinUX.Common\WinUX.Common.csproj">
       <Project>{E92F28CC-FA17-4794-AD4C-D4FCF0B27D16}</Project>
       <Name>WinUX.Common</Name>
     </ProjectReference>
