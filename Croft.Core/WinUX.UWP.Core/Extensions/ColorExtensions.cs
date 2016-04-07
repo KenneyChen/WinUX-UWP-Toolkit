@@ -1,11 +1,55 @@
 ﻿namespace WinUX.Extensions
 {
     using Windows.UI;
+    using Windows.UI.Xaml.Media;
 
     using WinUX.Enums;
 
     public static class ColorExtensions
     {
+        private static readonly Color NearBlack = Colors.Black.Lighten(10);
+
+        private static readonly Color NearWhite = Colors.Black.Lighten(90);
+
+        /// <summary>
+        /// Converts a <see cref="Color"/> value to a <see cref="SolidColorBrush"/>.
+        /// </summary>
+        /// <param name="color">
+        /// The <see cref="Color"/> to converter.
+        /// </param>
+        /// <returns>
+        /// Returns a <see cref="SolidColorBrush"/> containing the color.
+        /// </returns>
+        public static SolidColorBrush ToSolidColorBrush(this Color color)
+        {
+            return new SolidColorBrush(color);
+        }
+
+        /// <summary>
+        /// Darkens a color by a given amount.
+        /// </summary>
+        /// <param name="color">The current color.</param>
+        /// <param name="amount">The amount to darken by.</param>
+        /// <returns>Returns a <see cref="Color"/> value representing the given <see cref="Color"/> darker.</returns>
+        public static Color Darken(this Color color, float amount)
+        {
+            var val = amount * 0.1f;
+            return Lerp(color, NearBlack, val);
+        }
+
+        /// <summary>
+        /// Lightens a color by a given amount.
+        /// </summary>
+        /// <param name="color">The current color.</param>
+        /// <param name="amount">The amount to lighten by.</param>
+        /// <returns>Returns a <see cref="Color"/> value representing the given <see cref="Color"/> lighter.</returns>
+
+        public static Color Lighten(this Color color, float amount)
+        {
+            var val = amount * 0.1f;
+            return Lerp(color, NearWhite, val);
+        }
+
         /// <summary>
         /// Converts a color value to a string representation of the value in hex.
         /// </summary>
@@ -66,6 +110,23 @@
             }
 
             return AccentColor.Indigo; // Indigo (Default)
+        }
+
+        private static Color Lerp(this Color color, Color target, float amount)
+        {
+            float startRed = color.R;
+            float startGreen = color.G;
+            float startBlue = color.B;
+
+            float endRed = target.R;
+            float endGreen = target.G;
+            float endBlue = target.B;
+
+            var r = (byte)startRed.Lerp(endRed, amount);
+            var g = (byte)startGreen.Lerp(endGreen, amount);
+            var b = (byte)startBlue.Lerp(endBlue, amount);
+
+            return Color.FromArgb(color.A, r, g, b);
         }
     }
 }
