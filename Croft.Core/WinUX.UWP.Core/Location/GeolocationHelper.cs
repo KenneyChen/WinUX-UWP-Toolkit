@@ -16,7 +16,7 @@ namespace WinUX.Location
     using WinUX.Diagnostics;
 
     /// <summary>
-    /// The geolocation helper.
+    /// A helper class for <see cref="Geolocator"/>.
     /// </summary>
     public class GeolocationHelper
     {

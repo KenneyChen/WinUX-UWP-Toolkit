@@ -10,6 +10,9 @@ namespace WinUX.Extensions
 
     using WinUX.Enums;
 
+    /// <summary>
+    /// A collection of <see cref="AnalyticsInfo"/> extensions.
+    /// </summary>
     public static class AnalyticsInfoExtensions
     {
         /// <summary>
@@ -37,6 +40,8 @@ namespace WinUX.Extensions
                     return DeviceType.IoT;
                 case "Windows.Xbox":
                     return DeviceType.Xbox;
+                case "Windows.HoloLens":
+                    return DeviceType.Hololens;
                 default:
                     return DeviceType.Unknown;
             }

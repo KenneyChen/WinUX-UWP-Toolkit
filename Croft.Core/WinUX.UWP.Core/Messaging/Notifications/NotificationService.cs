@@ -1,11 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Windows.UI.Notifications;
-using NotificationsExtensions.Toasts;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="NotificationService.cs" company="James Croft">
+//   Copyright (c) 2015 James Croft.
+// </copyright>
+// <summary>
+//   Defines the NotificationService type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WinUX.Messaging.Notifications
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using NotificationsExtensions.Toasts;
+
+    using Windows.UI.Notifications;
+
+    /// <summary>
+    /// A service for providing Windows <see cref="ToastNotification"/>.
+    /// </summary>
     public class NotificationService
     {
         /// <summary>
@@ -24,18 +38,14 @@ namespace WinUX.Messaging.Notifications
                 throw new ArgumentNullException(nameof(title));
             }
 
-            var visualPart = new ToastVisual {TitleText = new ToastText {Text = title}};
+            var visualPart = new ToastVisual { TitleText = new ToastText { Text = title } };
 
             if (!string.IsNullOrWhiteSpace(body))
             {
-                visualPart.BodyTextLine1 = new ToastText {Text = body};
+                visualPart.BodyTextLine1 = new ToastText { Text = body };
             }
 
-            var notification = new ToastContent
-            {
-                Visual = visualPart,
-                Scenario = ToastScenario.Default
-            };
+            var notification = new ToastContent { Visual = visualPart, Scenario = ToastScenario.Default };
 
             this.ShowNotification(notification);
         }
@@ -64,19 +74,19 @@ namespace WinUX.Messaging.Notifications
                 throw new ArgumentNullException(nameof(launchString));
             }
 
-            var visualPart = new ToastVisual {TitleText = new ToastText {Text = title}};
+            var visualPart = new ToastVisual { TitleText = new ToastText { Text = title } };
 
             if (!string.IsNullOrWhiteSpace(body))
             {
-                visualPart.BodyTextLine1 = new ToastText {Text = body};
+                visualPart.BodyTextLine1 = new ToastText { Text = body };
             }
 
             var notification = new ToastContent
-            {
-                Visual = visualPart,
-                Launch = launchString,
-                Scenario = ToastScenario.Default
-            };
+                                   {
+                                       Visual = visualPart,
+                                       Launch = launchString,
+                                       Scenario = ToastScenario.Default
+                                   };
 
             this.ShowNotification(notification);
         }
@@ -127,11 +137,11 @@ namespace WinUX.Messaging.Notifications
                 throw new InvalidOperationException("Cannot have more than 5 buttons.");
             }
 
-            var visualPart = new ToastVisual {TitleText = new ToastText {Text = title}};
+            var visualPart = new ToastVisual { TitleText = new ToastText { Text = title } };
 
             if (!string.IsNullOrWhiteSpace(body))
             {
-                visualPart.BodyTextLine1 = new ToastText {Text = body};
+                visualPart.BodyTextLine1 = new ToastText { Text = body };
             }
 
             var actionPart = new ToastActionsCustom();
@@ -142,12 +152,12 @@ namespace WinUX.Messaging.Notifications
             }
 
             var notification = new ToastContent
-            {
-                Visual = visualPart,
-                Launch = launchString,
-                Scenario = ToastScenario.Default,
-                Actions = actionPart
-            };
+                                   {
+                                       Visual = visualPart,
+                                       Launch = launchString,
+                                       Scenario = ToastScenario.Default,
+                                       Actions = actionPart
+                                   };
 
             this.ShowNotification(notification);
         }

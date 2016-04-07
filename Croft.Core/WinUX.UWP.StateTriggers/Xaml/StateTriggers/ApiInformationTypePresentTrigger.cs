@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ApiInformationTrigger.cs" company="James Croft">
+// <copyright file="ApiInformationTypePresentTrigger.cs" company="James Croft">
 //   Copyright (c) 2015 James Croft.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -12,14 +12,14 @@ namespace WinUX.Xaml.StateTriggers
     using Windows.UI.Xaml;
 
     /// <summary>
-    /// The ApiInformation trigger.
+    /// A StateTrigger to handle <see cref="ApiInformation"/> types existing.
     /// </summary>
-    public class ApiInformationTrigger : StateTriggerBase
+    public class ApiInformationTypePresentTrigger : StateTriggerBase
     {
         public static readonly DependencyProperty TypeProperty = DependencyProperty.Register(
             "Type",
             typeof(string),
-            typeof(ApiInformationTrigger),
+            typeof(ApiInformationTypePresentTrigger),
             new PropertyMetadata(string.Empty, OnTypeChanged));
 
         private bool _isActive;
@@ -64,7 +64,7 @@ namespace WinUX.Xaml.StateTriggers
 
         private static void OnTypeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            var trigger = (ApiInformationTrigger)obj;
+            var trigger = (ApiInformationTypePresentTrigger)obj;
             var newVal = (string)args.NewValue;
 
             trigger.IsActive = !string.IsNullOrWhiteSpace(newVal) && ApiInformation.IsTypePresent(newVal);

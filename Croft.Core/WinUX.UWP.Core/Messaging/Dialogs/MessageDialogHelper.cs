@@ -18,7 +18,7 @@ namespace WinUX.Messaging.Dialogs
     using Windows.UI.Popups;
 
     /// <summary>
-    /// The message dialog helper.
+    /// A helper class for <see cref="MessageDialog"/>.
     /// </summary>
     public class MessageDialogHelper : IDisposable
     {

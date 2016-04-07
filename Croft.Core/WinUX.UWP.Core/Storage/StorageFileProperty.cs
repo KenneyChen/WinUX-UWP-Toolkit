@@ -6,8 +6,10 @@
 
 namespace WinUX.Storage
 {
+    using Windows.Storage;
+
     /// <summary>
-    /// The storage file property.
+    /// A model for <see cref="StorageFile"/> properties.
     /// </summary>
     public class StorageFileProperty
     {

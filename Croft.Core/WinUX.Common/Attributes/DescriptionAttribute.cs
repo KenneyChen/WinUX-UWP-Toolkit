@@ -12,7 +12,7 @@ namespace WinUX.Attributes
     using System;
 
     /// <summary>
-    /// The description attribute.
+    /// An attribute to provide a description.
     /// </summary>
     public class DescriptionAttribute : Attribute
     {

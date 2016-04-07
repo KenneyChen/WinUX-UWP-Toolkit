@@ -17,11 +17,17 @@ namespace WinUX.Extensions
     public static class FrameworkElementExtensions
     {
         /// <summary>
-        /// Get ancestor of framework element
+        /// Get the ancestor of a given <see cref="FrameworkElement"/>.
         /// </summary>
-        /// <typeparam name="T">Framwork element</typeparam>
-        /// <param name="element">Framework element to find ancestor of</param>
-        /// <returns>Ancestor framework element</returns>
+        /// <typeparam name="T">
+        /// The type of ancestor to find.
+        /// </typeparam>
+        /// <param name="element">
+        /// The <see cref="FrameworkElement"/> to find the ancestor from.
+        /// </param>
+        /// <returns>
+        /// Returns the ancestor <see cref="FrameworkElement"/> if it exists, else null.
+        /// </returns>
         public static T GetAncestor<T>(this FrameworkElement element) where T : FrameworkElement
         {
             var ancestor = element as T;

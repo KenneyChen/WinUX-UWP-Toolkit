@@ -32,12 +32,7 @@ namespace WinUX.Common
 
             this._eventHandler = eventHandler;
 
-            var binding = new Binding
-            {
-                Source = obj,
-                Path = new PropertyPath(propertyName),
-                Mode = BindingMode.OneWay
-            };
+            var binding = new Binding { Source = obj, Path = new PropertyPath(propertyName), Mode = BindingMode.OneWay };
 
             BindingOperations.SetBinding(this, ValueProperty, binding);
         }

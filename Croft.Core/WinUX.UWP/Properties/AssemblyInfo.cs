@@ -1,4 +1,13 @@
-﻿using System.Resources;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="James Croft">
+//   Copyright (c) 2015 James Croft.
+// </copyright>
+// <summary>
+//   AssemblyInfo.cs
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+using System.Resources;
 using System.Reflection;
 using System.Runtime.InteropServices;
 

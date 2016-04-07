@@ -112,9 +112,17 @@
     <Content Include="Properties\Croft.Core.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WinUX.Common\WinUX.Common.csproj">
+      <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
+      <Name>WinUX.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Behaviors\WinUX.UWP.Behaviors.csproj">
       <Project>{198bcc8d-ae93-4836-8f2d-17d837e6d0b2}</Project>
       <Name>WinUX.UWP.Behaviors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinUX.UWP.Controls\WinUX.UWP.Controls.csproj">
+      <Project>{a644ee44-f387-4107-98ce-f3676c57916b}</Project>
+      <Name>WinUX.UWP.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Core\WinUX.UWP.Core.csproj">
       <Project>{c6216e8d-f810-49c8-99e5-320350fdb3f2}</Project>

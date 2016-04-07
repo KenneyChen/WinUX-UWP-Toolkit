@@ -14,10 +14,11 @@ namespace WinUX.Xaml.Converters.Colors
     using Windows.UI.Xaml.Data;
     using Windows.UI.Xaml.Media;
 
+    using WinUX.Enums;
     using WinUX.Extensions;
 
     /// <summary>
-    /// The brush to primary accent brush converter.
+    /// Converter for converting a <see cref="SolidColorBrush"/> to an internal primary <see cref="AccentColor"/>.
     /// </summary>
     public class BrushToPrimaryAccentBrushConverter : IValueConverter
     {

@@ -10,7 +10,7 @@ namespace WinUX.Extensions
     using System.Text;
 
     /// <summary>
-    /// A collection of string extensions.
+    /// A collection of <see cref="string"/> extensions.
     /// </summary>
     public static class StringExtensions
     {
@@ -25,8 +25,7 @@ namespace WinUX.Extensions
         /// </returns>
         public static bool IsEmpty(this string text)
         {
-            if (string.IsNullOrWhiteSpace(text))
-                return true;
+            if (string.IsNullOrWhiteSpace(text)) return true;
 
             DateTime date;
 

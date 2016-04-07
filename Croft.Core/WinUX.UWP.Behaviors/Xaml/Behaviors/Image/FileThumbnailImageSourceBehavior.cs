@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace WinUX.Xaml.Behaviors
+namespace WinUX.Xaml.Behaviors.Image
 {
     using System;
 
@@ -17,7 +17,7 @@ namespace WinUX.Xaml.Behaviors
     using Microsoft.Xaml.Interactivity;
 
     /// <summary>
-    /// The file thumbnail image source behavior.
+    /// A behavior to attach to an <see cref="Image"/> control to show the thumbnail of a <see cref="StorageFile"/>.
     /// </summary>
     public class FileThumbnailImageSourceBehavior : Behavior
     {
@@ -35,7 +35,7 @@ namespace WinUX.Xaml.Behaviors
             }
 
             var behavior = d as FileThumbnailImageSourceBehavior;
-            if (behavior?.Parent == null)
+            if (behavior?.Image == null)
             {
                 return;
             }
@@ -51,7 +51,7 @@ namespace WinUX.Xaml.Behaviors
             var bitmapImage = new BitmapImage();
             bitmapImage.SetSource(thumb.CloneStream());
 
-            behavior.Parent.Source = bitmapImage;
+            behavior.Image.Source = bitmapImage;
         }
 
         public StorageFile File
@@ -66,6 +66,6 @@ namespace WinUX.Xaml.Behaviors
             }
         }
 
-        public Image Parent => this.AssociatedObject as Image;
+        private Image Image => this.AssociatedObject as Image;
     }
 }

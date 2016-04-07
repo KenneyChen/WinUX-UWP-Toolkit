@@ -12,7 +12,7 @@ namespace WinUX.Xaml.Converters
     using Windows.UI.Xaml.Data;
 
     /// <summary>
-    ///     The boolean format converter.
+    /// Converter for returning a <see cref="string"/> representation of a <see cref="bool"/> value.
     /// </summary>
     public class BooleanFormatConverter : DependencyObject, IValueConverter
     {

@@ -11,7 +11,7 @@ namespace WinUX.Extensions
     using Windows.UI;
 
     /// <summary>
-    /// A collection of string extensions.
+    /// A collection of <see cref="string"/> extensions.
     /// </summary>
     public static class StringExtensions
     {
@@ -29,12 +29,12 @@ namespace WinUX.Extensions
             var val = argbHexValue.ToUpper();
 
             var color = new Color
-            {
-                A = byte.Parse(val.Substring(1, 2), NumberStyles.AllowHexSpecifier),
-                R = byte.Parse(val.Substring(3, 2), NumberStyles.AllowHexSpecifier),
-                G = byte.Parse(val.Substring(5, 2), NumberStyles.AllowHexSpecifier),
-                B = byte.Parse(val.Substring(7, 2), NumberStyles.AllowHexSpecifier)
-            };
+                            {
+                                A = byte.Parse(val.Substring(1, 2), NumberStyles.AllowHexSpecifier),
+                                R = byte.Parse(val.Substring(3, 2), NumberStyles.AllowHexSpecifier),
+                                G = byte.Parse(val.Substring(5, 2), NumberStyles.AllowHexSpecifier),
+                                B = byte.Parse(val.Substring(7, 2), NumberStyles.AllowHexSpecifier)
+                            };
 
             return color;
         }

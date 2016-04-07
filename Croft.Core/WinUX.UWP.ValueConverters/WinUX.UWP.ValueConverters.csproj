@@ -118,6 +118,7 @@
     <Compile Include="Xaml\Converters\Colors\BrushToPrimaryAccentColorConverter.cs" />
     <Compile Include="Xaml\Converters\DateTimeFormatConverter.cs" />
     <Compile Include="Xaml\Converters\EmptyStringToVisibilityConverter.cs" />
+    <Compile Include="Xaml\Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Xaml\Converters\EnumToVisibilityConverter.cs" />
     <Compile Include="Xaml\Converters\InverseBooleanToVisibilityConverter.cs" />
     <Compile Include="Xaml\Converters\MetricHeightFormatConverter.cs" />

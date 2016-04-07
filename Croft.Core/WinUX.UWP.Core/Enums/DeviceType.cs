@@ -19,6 +19,8 @@ namespace WinUX.Enums
         Mobile, 
         SurfaceHub, 
         IoT, 
-        Xbox
+        Xbox,
+        Hololens,
+        ContinuumPhone
     }
 }

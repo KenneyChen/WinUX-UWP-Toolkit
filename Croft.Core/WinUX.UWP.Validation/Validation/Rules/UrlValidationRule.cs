@@ -34,12 +34,6 @@
             }
 
             return Uri.IsWellFormedUriString(val, UriKind.Absolute);
-
-            //const string UrlPattern =
-            //    @"(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?";
-
-            //var reg = new Regex(UrlPattern, RegexOptions.IgnoreCase);
-            //return reg.IsMatch(val);
         }
     }
 }

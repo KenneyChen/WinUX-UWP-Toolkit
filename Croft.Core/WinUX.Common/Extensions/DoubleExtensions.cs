@@ -9,10 +9,12 @@ namespace WinUX.Extensions
     using System;
 
     /// <summary>
-    /// The collection of double extensions.
+    /// A collection of <see cref="double"/> extensions.
     /// </summary>
     public static class DoubleExtensions
     {
+        #region File sizes
+
         private const double KiloByte = 1024;
 
         private const double MegaByte = KiloByte * 1024;
@@ -53,5 +55,7 @@ namespace WinUX.Extensions
 
             return $"{Math.Round(fileSize, 2)}{sizeType}";
         }
+
+        #endregion
     }
 }

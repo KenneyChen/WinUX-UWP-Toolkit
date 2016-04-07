@@ -8,13 +8,15 @@ namespace WinUX.Xaml.StateTriggers
 {
     using System;
 
+    using Windows.Foundation.Metadata;
+    using Windows.Graphics.Display;
     using Windows.System.Profile;
     using Windows.UI.Xaml;
 
     using WinUX.Enums;
 
     /// <summary>
-    /// The device trigger.
+    /// A StateTrigger handling the device type.
     /// </summary>
     public class DeviceTrigger : StateTriggerBase
     {
@@ -85,7 +87,9 @@ namespace WinUX.Xaml.StateTriggers
                     trigger.IsActive = newVal == DeviceType.Desktop;
                     break;
                 case "Windows.Mobile":
-                    trigger.IsActive = newVal == DeviceType.Mobile;
+                    trigger.IsActive = IsInContinuum()
+                                           ? newVal == DeviceType.ContinuumPhone
+                                           : newVal == DeviceType.Mobile;
                     break;
                 case "Windows.Team":
                     trigger.IsActive = newVal == DeviceType.SurfaceHub;
@@ -96,14 +100,47 @@ namespace WinUX.Xaml.StateTriggers
                 case "Windows.Xbox":
                     trigger.IsActive = newVal == DeviceType.Xbox;
                     break;
+                case "Windows.HoloLens":
+                    trigger.IsActive = newVal == DeviceType.Hololens;
+                    break;
                 default:
                     trigger.IsActive = newVal == DeviceType.Unknown;
                     break;
             }
         }
 
+        private static double ScreenDiagonal
+        {
+            get
+            {
+                var di = DisplayInformation.GetForCurrentView();
+
+                if (ApiInformation.IsPropertyPresent(
+                    typeof(DisplayInformation).ToString(),
+                    nameof(di.DiagonalSizeInInches)))
+                {
+                    if (di.DiagonalSizeInInches != null)
+                    {
+                        return di.DiagonalSizeInInches.Value;
+                    }
+                }
+
+                return 7;
+            }
+        }
+
+        private static bool IsInContinuum()
+        {
+            if (CurrentDevice != "Windows.Mobile")
+            {
+                return false;
+            }
+
+            return ScreenDiagonal > 7;
+        }
+
         /// <summary>
-        ///     Called when the IsActive property changes.
+        ///  Called when the IsActive property changes.
         /// </summary>
         public event EventHandler IsActiveChanged;
     }

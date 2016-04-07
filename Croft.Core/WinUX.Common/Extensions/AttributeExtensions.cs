@@ -7,7 +7,7 @@
     using WinUX.Attributes;
 
     /// <summary>
-    /// A collection of Attribute extensions.
+    /// A collection of <see cref="Attribute"/> extensions.
     /// </summary>
     public static class AttributeExtensions
     {
@@ -30,15 +30,6 @@
                 attributes?.CustomAttributes.FirstOrDefault(x => x.AttributeType == typeof(DescriptionAttribute));
 
             return attribute != null ? attribute.ConstructorArguments[0].Value.ToString() : obj.ToString();
-        }
-
-        public static EnumStringAttribute GetEnumStringAttribute(this Enum enumVal)
-        {
-            return
-                enumVal.GetType()
-                    .GetTypeInfo()
-                    .GetDeclaredField(enumVal.ToString())
-                    .GetCustomAttribute<EnumStringAttribute>();
         }
     }
 }

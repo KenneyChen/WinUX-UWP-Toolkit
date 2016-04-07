@@ -12,7 +12,7 @@ namespace WinUX.Extensions
     using System.Net;
 
     /// <summary>
-    /// A collection of Uri extensions.
+    /// A collection of <see cref="Uri"/> extensions.
     /// </summary>
     public static class UriExtensions
     {

@@ -17,11 +17,12 @@ namespace WinUX.Storage
     using WinUX.Enums;
 
     /// <summary>
-    /// The storage helper.
+    /// A helper class for handling the save and load of <see cref="StorageFile"/>.
     /// </summary>
     public class StorageHelper
     {
         private const string LogsStorageFolderName = "Logs";
+
         private const string UserStorageFolderName = "User";
 
         /// <summary>
@@ -169,7 +170,10 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the StorageFile, if exists.
         /// </returns>
-        public async Task<StorageFile> RetrieveStorageFileAsync(StorageFolderLocation location, string fileName, bool createIfNotExists)
+        public async Task<StorageFile> RetrieveStorageFileAsync(
+            StorageFolderLocation location,
+            string fileName,
+            bool createIfNotExists)
         {
             if (string.IsNullOrWhiteSpace(fileName))
             {

@@ -13,7 +13,7 @@ namespace WinUX.Extensions
     using System.Linq;
 
     /// <summary>
-    /// A collection of IEnumerable extensions.
+    /// A collection of <see cref="IEnumerable{T}"/> extensions.
     /// </summary>
     public static class EnumerableExtensions
     {

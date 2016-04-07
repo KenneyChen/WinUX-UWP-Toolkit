@@ -47,7 +47,8 @@
         }
     }
 
-    public class WeakEventListener<TInstance, TSource, TEventArgs> where TInstance : class
+    public class WeakEventListener<TInstance, TSource, TEventArgs>
+        where TInstance : class
     {
         private readonly WeakReference _weakInstance;
 

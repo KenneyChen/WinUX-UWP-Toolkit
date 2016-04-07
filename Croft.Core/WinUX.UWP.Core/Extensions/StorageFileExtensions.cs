@@ -17,7 +17,7 @@ namespace WinUX.Extensions
     using WinUX.Storage;
 
     /// <summary>
-    /// A collection of StorageFile extensions.
+    /// A collection of <see cref="StorageFile"/> extensions.
     /// </summary>
     public static class StorageFileExtensions
     {
@@ -55,14 +55,17 @@ namespace WinUX.Extensions
         {
             var properties = new List<StorageFileProperty>();
 
-            var fileProps = await file.Properties.RetrievePropertiesAsync(null); // Gets all available properties for the file.
+            var fileProps = await file.Properties.RetrievePropertiesAsync(null);
+                // Gets all available properties for the file.
 
             ProcessExtendedProperties(properties, fileProps);
 
             return properties;
         }
 
-        private static void ProcessExtendedProperties(ICollection<StorageFileProperty> results, IDictionary<string, object> props)
+        private static void ProcessExtendedProperties(
+            ICollection<StorageFileProperty> results,
+            IDictionary<string, object> props)
         {
             if (props.ContainsKey("System.ItemName"))
             {
@@ -243,7 +246,9 @@ namespace WinUX.Extensions
             ProcessGpsProperties(results, props);
         }
 
-        private static void ProcessPhotoProperties(ICollection<StorageFileProperty> results, IDictionary<string, object> props)
+        private static void ProcessPhotoProperties(
+            ICollection<StorageFileProperty> results,
+            IDictionary<string, object> props)
         {
             if (props.ContainsKey("System.Image.Dimensions"))
             {
@@ -406,7 +411,9 @@ namespace WinUX.Extensions
             }
         }
 
-        private static void ProcessVideoProperties(ICollection<StorageFileProperty> results, IDictionary<string, object> props)
+        private static void ProcessVideoProperties(
+            ICollection<StorageFileProperty> results,
+            IDictionary<string, object> props)
         {
             if (props.ContainsKey("System.Video.FrameWidth") && props.ContainsKey("System.Video.FrameHeight"))
             {
@@ -423,7 +430,9 @@ namespace WinUX.Extensions
                         if (results.FirstOrDefault(x => x.Name == "Video dimensions") == null)
                         {
                             results.Add(
-                                new StorageFileProperty("Video dimensions", string.Format("{0} x {1}", frameWidth, frameHeight)));
+                                new StorageFileProperty(
+                                    "Video dimensions",
+                                    string.Format("{0} x {1}", frameWidth, frameHeight)));
                         }
                     }
                 }
@@ -454,7 +463,9 @@ namespace WinUX.Extensions
             }
         }
 
-        private static void ProcessAudioProperties(ICollection<StorageFileProperty> results, IDictionary<string, object> props)
+        private static void ProcessAudioProperties(
+            ICollection<StorageFileProperty> results,
+            IDictionary<string, object> props)
         {
             if (props.ContainsKey("System.Music.DisplayArtist"))
             {
@@ -489,7 +500,9 @@ namespace WinUX.Extensions
             }
         }
 
-        private static void ProcessGpsProperties(ICollection<StorageFileProperty> results, IDictionary<string, object> props)
+        private static void ProcessGpsProperties(
+            ICollection<StorageFileProperty> results,
+            IDictionary<string, object> props)
         {
             if (props.ContainsKey("System.GPS.LatitudeDecimal") && props.ContainsKey("System.GPS.LongitudeDecimal"))
             {

@@ -7,6 +7,7 @@
     xmlns:validationRules="using:WinUX.Validation.Rules"
     xmlns:validation="using:WinUX.Validation"
     xmlns:validationControls="using:WinUX.Xaml.Controls.Validation"
+    xmlns:controls="using:WinUX.Xaml.Controls"
     mc:Ignorable="d">
     
     <Page.Resources>
@@ -42,7 +43,7 @@
     </Page.Resources>
 
     <Pivot>
-       <PivotItem Header="ValidatingTextBox">
+        <PivotItem Header="Validation">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <ScrollViewer>
                     <StackPanel>
@@ -62,12 +63,23 @@
             </Grid>
         </PivotItem>
 
-        <PivotItem Header="Notifications">
+        <PivotItem Header="Controls">
             <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <ScrollViewer>
                     <StackPanel>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Snooze &amp; Dismiss Notification" Click="OnSnoozeAndDismissClicked" HorizontalAlignment="Stretch" />
+                            <controls:HeaderedTextBlock Header="Headered text block" Text="This is the value" />
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </PivotItem>
+
+        <PivotItem Header="MapControl - Behaviors">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
                         </Border>
                     </StackPanel>
                 </ScrollViewer>

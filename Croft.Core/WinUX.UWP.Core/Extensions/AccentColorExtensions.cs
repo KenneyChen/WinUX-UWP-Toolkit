@@ -14,7 +14,7 @@ namespace WinUX.Extensions
     using WinUX.Enums;
 
     /// <summary>
-    /// A collection of AccentColor extensions.
+    /// A collection of <see cref="AccentColor"/> extensions.
     /// </summary>
     public static class AccentColorExtensions
     {
@@ -55,7 +55,7 @@ namespace WinUX.Extensions
                     newColor = "#FF512DA8".ToColor();
                     break;
                 case AccentColor.Pink:
-                    newColor = "#FFC2185B".ToColor(); 
+                    newColor = "#FFC2185B".ToColor();
                     break;
                 case AccentColor.Magenta:
                     newColor = "#FF7B1FA2".ToColor();
@@ -102,34 +102,34 @@ namespace WinUX.Extensions
                     newColor = "#FFC8E6C9".ToColor();
                     break;
                 case AccentColor.Teal:
-                    newColor = "#FFB2DFDB".ToColor(); 
+                    newColor = "#FFB2DFDB".ToColor();
                     break;
                 case AccentColor.Cyan:
-                    newColor = "#FFB2EBF2".ToColor(); 
+                    newColor = "#FFB2EBF2".ToColor();
                     break;
                 case AccentColor.Cobalt:
                     newColor = "#FFBBDEFB".ToColor();
                     break;
                 case AccentColor.Violet:
-                    newColor = "#FFD1C4E9".ToColor(); 
+                    newColor = "#FFD1C4E9".ToColor();
                     break;
                 case AccentColor.Pink:
-                    newColor = "#FFF8BBD0".ToColor(); 
+                    newColor = "#FFF8BBD0".ToColor();
                     break;
                 case AccentColor.Magenta:
-                    newColor = "#FFE1BEE7".ToColor(); 
+                    newColor = "#FFE1BEE7".ToColor();
                     break;
                 case AccentColor.Red:
-                    newColor = "#FFFFCDD2".ToColor(); 
+                    newColor = "#FFFFCDD2".ToColor();
                     break;
                 case AccentColor.Orange:
-                    newColor = "#FFFFE0B2".ToColor(); 
+                    newColor = "#FFFFE0B2".ToColor();
                     break;
                 case AccentColor.Amber:
-                    newColor = "#FFFFECB3".ToColor(); 
+                    newColor = "#FFFFECB3".ToColor();
                     break;
                 case AccentColor.Yellow:
-                    newColor = "#FFFFF9C4".ToColor(); 
+                    newColor = "#FFFFF9C4".ToColor();
                     break;
             }
 
@@ -155,40 +155,40 @@ namespace WinUX.Extensions
                     newColor = "#FFCDDC39".ToColor();
                     break;
                 case AccentColor.Green:
-                    newColor = "#FF8BC34A".ToColor(); 
+                    newColor = "#FF8BC34A".ToColor();
                     break;
                 case AccentColor.Emerald:
-                    newColor = "#FF4CAF50".ToColor(); 
+                    newColor = "#FF4CAF50".ToColor();
                     break;
                 case AccentColor.Teal:
-                    newColor = "#FF009688".ToColor(); 
+                    newColor = "#FF009688".ToColor();
                     break;
                 case AccentColor.Cyan:
-                    newColor = "#FF00BCD4".ToColor(); 
+                    newColor = "#FF00BCD4".ToColor();
                     break;
                 case AccentColor.Cobalt:
-                    newColor = "#FF2196F3".ToColor(); 
+                    newColor = "#FF2196F3".ToColor();
                     break;
                 case AccentColor.Violet:
-                    newColor = "#FF673AB7".ToColor(); 
+                    newColor = "#FF673AB7".ToColor();
                     break;
                 case AccentColor.Pink:
-                    newColor = "#FFE91E63".ToColor(); 
+                    newColor = "#FFE91E63".ToColor();
                     break;
                 case AccentColor.Magenta:
-                    newColor = "#FF9C27B0".ToColor(); 
+                    newColor = "#FF9C27B0".ToColor();
                     break;
                 case AccentColor.Red:
                     newColor = "#FFF44336".ToColor();
                     break;
                 case AccentColor.Orange:
-                    newColor = "#FFFF9800".ToColor(); 
+                    newColor = "#FFFF9800".ToColor();
                     break;
                 case AccentColor.Amber:
-                    newColor = "#FFFFC107".ToColor(); 
+                    newColor = "#FFFFC107".ToColor();
                     break;
                 case AccentColor.Yellow:
-                    newColor = "#FFFFEB3B".ToColor(); 
+                    newColor = "#FFFFEB3B".ToColor();
                     break;
             }
 

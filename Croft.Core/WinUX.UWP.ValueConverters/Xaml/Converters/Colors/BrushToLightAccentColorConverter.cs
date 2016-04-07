@@ -14,10 +14,11 @@ namespace WinUX.Xaml.Converters.Colors
     using Windows.UI.Xaml.Data;
     using Windows.UI.Xaml.Media;
 
+    using WinUX.Enums;
     using WinUX.Extensions;
 
     /// <summary>
-    /// The brush to light accent color converter.
+    /// Converter for converting a <see cref="SolidColorBrush"/> to an internal light <see cref="AccentColor"/>.
     /// </summary>
     public class BrushToLightAccentColorConverter : IValueConverter
     {

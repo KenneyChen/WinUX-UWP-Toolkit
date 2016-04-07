@@ -17,7 +17,7 @@ namespace WinUX.Extensions
     using WinUX.Common;
 
     /// <summary>
-    /// A collection of DependencyObject extensions.
+    /// A collection of <see cref="DependencyObject"/> extensions.
     /// </summary>
     public static class DependencyObjectExtensions
     {
@@ -36,7 +36,10 @@ namespace WinUX.Extensions
         /// <returns>
         /// The <see cref="IDisposable"/>.
         /// </returns>
-        public static IDisposable ListenToProperty(this DependencyObject obj, string propertyName, DependencyPropertyChangedEventHandler eventHandler)
+        public static IDisposable ListenToProperty(
+            this DependencyObject obj,
+            string propertyName,
+            DependencyPropertyChangedEventHandler eventHandler)
         {
             return new DependencyPropertyListener(obj, propertyName, eventHandler);
         }
