@@ -47,8 +47,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
 
-                        <TextBlock x:Name="HeaderPresenter" Style="{StaticResource SubtitleTextBlockStyle}" Foreground="White" MaxLines="1"/>
-                        <TextBlock x:Name="TextValue" Style="{StaticResource HeaderedTextBlockTextStyle}" Foreground="White" />
+                        <TextBlock x:Name="HeaderPresenter" Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource SystemControlBackgroundAccentBrush}" MaxLines="1"/>
+                        <TextBlock x:Name="TextValue" Style="{StaticResource HeaderedTextBlockTextStyle}" Foreground="{StaticResource ApplicationForegroundThemeBrush}" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
