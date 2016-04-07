@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Xaml\Behaviors\FileThumbnailImageSourceBehavior.cs" />
+    <Compile Include="Xaml\Behaviors\MapControl\MapControlRadiusBehavior.cs" />
     <Compile Include="Xaml\Behaviors\WinComposition\UIElementParallaxEffectBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\WinUX.UWP.Behaviors.rd.xml" />
