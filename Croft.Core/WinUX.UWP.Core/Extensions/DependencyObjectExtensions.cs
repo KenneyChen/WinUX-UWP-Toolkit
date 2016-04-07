@@ -7,8 +7,11 @@
 namespace WinUX.Extensions
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls.Primitives;
     using Windows.UI.Xaml.Media;
 
     using WinUX.Common;
@@ -69,6 +72,93 @@ namespace WinUX.Extensions
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the descendants of a <see cref="DependencyObject"/> based on a given type.
+        /// </summary>
+        /// <param name="obj">
+        /// The object to get descendants from.
+        /// </param>
+        /// <typeparam name="T">
+        /// The type of descendants to find.
+        /// </typeparam>
+        /// <returns>
+        /// Returns a collection of DependencyObjects of the given type.
+        /// </returns>
+        public static IEnumerable<T> GetDescendantsOfType<T>(this DependencyObject obj) where T : DependencyObject
+        {
+            return obj.GetDescendants().OfType<T>();
+        }
+
+        /// <summary>
+        /// Gets the decendants of a <see cref="DependencyObject"/>.
+        /// </summary>
+        /// <param name="obj">
+        /// The object to get descendants from.
+        /// </param>
+        /// <returns>
+        /// Returns a collection of DependencyObjects.
+        /// </returns>
+        public static IEnumerable<DependencyObject> GetDescendants(this DependencyObject obj)
+        {
+            if (obj == null)
+            {
+                yield break;
+            }
+
+            var queue = new Queue<DependencyObject>();
+
+            var popup = obj as Popup;
+
+            if (popup != null)
+            {
+                if (popup.Child != null)
+                {
+                    queue.Enqueue(popup.Child);
+                    yield return popup.Child;
+                }
+            }
+            else
+            {
+                var count = VisualTreeHelper.GetChildrenCount(obj);
+
+                for (var i = 0; i < count; i++)
+                {
+                    var child = VisualTreeHelper.GetChild(obj, i);
+                    queue.Enqueue(child);
+                    yield return child;
+                }
+            }
+
+            while (queue.Count > 0)
+            {
+                var parent = queue.Dequeue();
+
+                popup = parent as Popup;
+
+                if (popup != null)
+                {
+                    if (popup.Child == null)
+                    {
+                        continue;
+                    }
+
+                    queue.Enqueue(popup.Child);
+                    yield return popup.Child;
+                }
+                else
+                {
+                    var count = VisualTreeHelper.GetChildrenCount(parent);
+
+                    for (var i = 0; i < count; i++)
+                    {
+                        var child = VisualTreeHelper.GetChild(parent, i);
+                        yield return child;
+                        queue.Enqueue(child);
+                    }
+                }
+            }
         }
     }
 }
