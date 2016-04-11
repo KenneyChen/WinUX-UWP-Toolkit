@@ -6,6 +6,11 @@
 
 namespace WinUX.Sample
 {
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+
+    using WinUX.Sample.Views;
+
     /// <summary>
     /// The main page.
     /// </summary>
@@ -17,6 +22,16 @@ namespace WinUX.Sample
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void OnBehaviorsClicked(object sender, RoutedEventArgs e)
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(BehaviorsView));
+        }
+
+        private void OnControlsClicked(object sender, RoutedEventArgs e)
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(ControlsView));
         }
     }
 }

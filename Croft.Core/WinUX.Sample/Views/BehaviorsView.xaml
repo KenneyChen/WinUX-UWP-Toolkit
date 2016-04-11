@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="WinUX.Sample.Views.BehaviorsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:mapControl="using:WinUX.Xaml.Behaviors.MapControl"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Color x:Key="MapRadiusBorderColor">#B2FFFFFF</Color>
+        <Color x:Key="MapRadiusFillColor">#3B4381ED</Color>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="10"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Pivot>
+            <PivotItem Header="MapControl - Radius behavior" Margin="10,0,10,10">
+                <RelativePanel>
+                    <maps:MapControl x:Name="Map" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Center="{x:Bind ViewModel.MapCenter, Mode=TwoWay}" ZoomLevel="{x:Bind ViewModel.MapZoomLevel, Mode=TwoWay}" WatermarkMode="On">
+                        <interactivity:Interaction.Behaviors>
+                            <mapControl:MapControlRadiusBehavior Center="{x:Bind ViewModel.CurrentPosition, Mode=TwoWay}" Radius="{x:Bind ViewModel.SearchRadius, Mode=OneWay}" RadiusFillColor="{StaticResource MapRadiusFillColor}" RadiusBorderColor="{StaticResource MapRadiusBorderColor}" />
+                        </interactivity:Interaction.Behaviors>
+                    </maps:MapControl>
+                </RelativePanel>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

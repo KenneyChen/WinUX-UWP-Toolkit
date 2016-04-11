@@ -4,88 +4,28 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:validationRules="using:WinUX.Validation.Rules"
-    xmlns:validation="using:WinUX.Validation"
-    xmlns:validationControls="using:WinUX.Xaml.Controls.Validation"
-    xmlns:controls="using:WinUX.Xaml.Controls"
     mc:Ignorable="d">
-    
-    <Page.Resources>
-        <validation:ValidationRules x:Key="DoubleSample">
-            <validation:ValidationRules.Rules>
-                <validationRules:DoubleValidationRule />
-            </validation:ValidationRules.Rules>
-        </validation:ValidationRules>
 
-        <validation:ValidationRules x:Key="IntSample">
-            <validation:ValidationRules.Rules>
-                <validationRules:IntValidationRule />
-            </validation:ValidationRules.Rules>
-        </validation:ValidationRules>
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition IsStaggeringEnabled="True" FromVerticalOffset="10"/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
 
-        <validation:ValidationRules x:Key="UrlSample">
-            <validation:ValidationRules.Rules>
-                <validationRules:UrlValidationRule />
-            </validation:ValidationRules.Rules>
-        </validation:ValidationRules>
-
-        <validation:ValidationRules x:Key="EmailSample">
-            <validation:ValidationRules.Rules>
-                <validationRules:EmailValidationRule />
-            </validation:ValidationRules.Rules>
-        </validation:ValidationRules>
-        
-        <validation:ValidationRules x:Key="CharacterLimitSample">
-            <validation:ValidationRules.Rules>
-                <validationRules:CharacterLimitValidationRule MinLength="3" MaxLength="16" />
-            </validation:ValidationRules.Rules>
-        </validation:ValidationRules>
-    </Page.Resources>
-
-    <Pivot>
-        <PivotItem Header="Validation">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem Header="WinUX Samples">
                 <ScrollViewer>
                     <StackPanel>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <validationControls:ValidatingTextBox IsMandatory="True" Header="Number example" Text="One" ValidationRules="{StaticResource IntSample}" />
+                            <Button Content="Controls" Click="OnControlsClicked" HorizontalAlignment="Stretch" />
                         </Border>
-
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <validationControls:ValidatingTextBox IsMandatory="True" Header="Website example" Text="http://www.jamescroft.co.uk/blog" ValidationRules="{StaticResource UrlSample}" />
-                        </Border>
-
-                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <validationControls:ValidatingTextBox IsMandatory="True" Header="Email example" Text="user@website.com" ValidationRules="{StaticResource EmailSample}" />
+                            <Button Content="Behaviors" Click="OnBehaviorsClicked" HorizontalAlignment="Stretch" />
                         </Border>
                     </StackPanel>
                 </ScrollViewer>
-            </Grid>
-        </PivotItem>
-
-        <PivotItem Header="Controls">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                <ScrollViewer>
-                    <StackPanel>
-                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <controls:HeaderedTextBlock Header="Headered text block" Text="This is the value" />
-                        </Border>
-                    </StackPanel>
-                </ScrollViewer>
-            </Grid>
-        </PivotItem>
-
-        <PivotItem Header="MapControl - Behaviors">
-            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                <ScrollViewer>
-                    <StackPanel>
-                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                        </Border>
-                    </StackPanel>
-                </ScrollViewer>
-            </Grid>
-        </PivotItem>
-    </Pivot>
-    
-    
+            </PivotItem>
+        </Pivot>
+    </Grid>
 </Page>

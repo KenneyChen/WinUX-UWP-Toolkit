@@ -99,6 +99,7 @@ namespace WinUX.Xaml.Controls.ToggleButton
                 if (args.OldValue == null && args.NewValue != null)
                 {
                     toggleButton.Checked += OnToggleButtonChecked;
+                    toggleButton.Unchecked += OnToggleButtonUnchecked;
                 }
             }
         }
@@ -114,6 +115,20 @@ namespace WinUX.Xaml.Controls.ToggleButton
                 var parent = groupParent == null ? toggleButton.GetAncestor<CommandBar>() : groupParent as UIElement;
 
                 UpdateToggleState(parent, groupName, toggleButton);
+            }
+        }
+
+        private static void OnToggleButtonUnchecked(object sender, RoutedEventArgs args)
+        {
+            var toggleButton = sender as AppBarToggleButton;
+            if (toggleButton != null)
+            {
+                var groupName = GetGroupName(toggleButton);
+                var groupParent = GetGroupParent(toggleButton);
+
+                var element = groupParent == null ? toggleButton.GetAncestor<CommandBar>() : groupParent as UIElement;
+
+                UpdateUncheckedToggleState(element, groupName, toggleButton);
             }
         }
 
@@ -139,6 +154,26 @@ namespace WinUX.Xaml.Controls.ToggleButton
                     {
                         toggle.IsChecked = false;
                     }
+                }
+            }
+        }
+
+        private static void UpdateUncheckedToggleState(
+            DependencyObject element,
+            string groupName,
+            ToggleButton toggleButton)
+        {
+            var childGroupItems =
+                element?.GetDescendantsOfType<AppBarToggleButton>().Where(x => x != null && x != toggleButton).ToList();
+
+            if (childGroupItems?.Count > 0)
+            {
+                if (
+                    childGroupItems.Where(x => GetGroupName(x) == groupName)
+                        .All(x => x.IsChecked != null && !x.IsChecked.Value))
+                {
+                    // None of the buttons are now checked in the group so we will auto-highlight the last known state.
+                    toggleButton.IsChecked = true;
                 }
             }
         }

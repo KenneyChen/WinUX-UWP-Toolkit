@@ -265,7 +265,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -2063,7 +2063,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -3707,7 +3707,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -5349,7 +5349,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -6993,7 +6993,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -8635,7 +8635,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -10279,7 +10279,7 @@
           "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/10586.0.2": {
+      "NotificationsExtensions.Win10/14295.0.0": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -12298,11 +12298,11 @@
         "lib/uap10.0/Microsoft.Xaml.Interactivity.xml"
       ]
     },
-    "NotificationsExtensions.Win10/10586.0.2": {
-      "sha512": "aK0M0hQdG0L1qjkmrHIp4WYro6afeBg6ljMfg6jP5cswqQg4gW2WppFOcCLJaWa+ZGVGSgYXkazWEbA0MwRpow==",
+    "NotificationsExtensions.Win10/14295.0.0": {
+      "sha512": "/FXUu5DHTQiEmd30MnPI4jWGm+fbrZA3plSdz/9NfW7DuNRk0t51NRiprT1dKvTK7IS8XuiqYQ2WD0Cn/WImEg==",
       "type": "package",
       "files": [
-        "NotificationsExtensions.Win10.10586.0.2.nupkg.sha512",
+        "NotificationsExtensions.Win10.14295.0.0.nupkg.sha512",
         "NotificationsExtensions.Win10.nuspec",
         "lib/dotnet/NotificationsExtensions.Win10.NETCore.XML",
         "lib/dotnet/NotificationsExtensions.Win10.NETCore.dll",

@@ -101,6 +101,13 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BehaviorsViewModel.cs" />
+    <Compile Include="Views\BehaviorsView.xaml.cs">
+      <DependentUpon>BehaviorsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlsView.xaml.cs">
+      <DependentUpon>ControlsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -127,35 +134,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\BehaviorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ControlsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WinUX.Common\WinUX.Common.csproj">
-      <Project>{e92f28cc-fa17-4794-ad4c-d4fcf0b27d16}</Project>
+      <Project>{E92F28CC-FA17-4794-AD4C-D4FCF0B27D16}</Project>
       <Name>WinUX.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Behaviors\WinUX.UWP.Behaviors.csproj">
-      <Project>{198bcc8d-ae93-4836-8f2d-17d837e6d0b2}</Project>
+      <Project>{198BCC8D-AE93-4836-8F2D-17D837E6D0B2}</Project>
       <Name>WinUX.UWP.Behaviors</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Controls\WinUX.UWP.Controls.csproj">
-      <Project>{a644ee44-f387-4107-98ce-f3676c57916b}</Project>
+      <Project>{A644EE44-F387-4107-98CE-F3676C57916B}</Project>
       <Name>WinUX.UWP.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Core\WinUX.UWP.Core.csproj">
-      <Project>{c6216e8d-f810-49c8-99e5-320350fdb3f2}</Project>
+      <Project>{C6216E8D-F810-49C8-99E5-320350FDB3F2}</Project>
       <Name>WinUX.UWP.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.StateTriggers\WinUX.UWP.StateTriggers.csproj">
-      <Project>{efa1ed9e-ac60-4a9e-b5d7-efeecce11cef}</Project>
-      <Name>WinUX.UWP.StateTriggers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP.ValueConverters\WinUX.UWP.ValueConverters.csproj">
-      <Project>{f77c5ae3-4028-4ad7-a4d2-2cb4fca60032}</Project>
-      <Name>WinUX.UWP.ValueConverters</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WinUX.UWP\WinUX.UWP.csproj">
-      <Project>{9ebf54fd-4ebf-4f49-96a6-69279a2d8ddf}</Project>
-      <Name>WinUX.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinUX.UWP.Validation\WinUX.UWP.Validation.csproj">
       <Project>{D8CE4EA6-0F2E-42D7-B8B1-4254EF6F5412}</Project>

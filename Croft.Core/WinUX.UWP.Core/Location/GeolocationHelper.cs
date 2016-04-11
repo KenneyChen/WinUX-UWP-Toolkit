@@ -43,7 +43,7 @@ namespace WinUX.Location
         /// <summary>
         /// Initializes the GeolocationHelper.
         /// </summary>
-        public void Initialize()
+        public async void Initialize()
         {
             if (this._locator == null)
             {
@@ -52,7 +52,14 @@ namespace WinUX.Location
 
             this._locator.PositionChanged += this.OnLocationChanged;
 
-            this.CurrentPosition = this._locator.GetGeopositionAsync().AsTask().Result;
+            try
+            {
+                this.CurrentPosition = await this._locator.GetGeopositionAsync();
+            }
+            catch (Exception ex)
+            {
+                Logger.Log.Debug(ex.Message);
+            }
         }
 
         private void OnLocationChanged(Geolocator sender, PositionChangedEventArgs args)
@@ -67,7 +74,7 @@ namespace WinUX.Location
                 }
                 catch (Exception ex)
                 {
-                    Logger.Log.Debug(ex.Message);
+                    Logger.Log.Error(ex.Message);
                 }
             }
         }

@@ -8,6 +8,7 @@ namespace WinUX.Xaml.StateTriggers
 {
     using System;
 
+    using Windows.ApplicationModel.Wallet;
     using Windows.Foundation.Metadata;
     using Windows.Graphics.Display;
     using Windows.System.Profile;
@@ -23,10 +24,17 @@ namespace WinUX.Xaml.StateTriggers
         private static readonly string CurrentDevice;
 
         private static readonly DependencyProperty DeviceTypeProperty = DependencyProperty.Register(
-            "DeviceType",
+            nameof(DeviceType),
             typeof(DeviceType),
             typeof(DeviceTrigger),
             new PropertyMetadata(DeviceType.Unknown, OnDeviceTypeChanged));
+
+        public static readonly DependencyProperty SupportsContinuumProperty =
+            DependencyProperty.Register(
+                nameof(SupportsContinuum),
+                typeof(bool),
+                typeof(DeviceTrigger),
+                new PropertyMetadata(false));
 
         private bool _isActive;
 
@@ -36,6 +44,18 @@ namespace WinUX.Xaml.StateTriggers
         static DeviceTrigger()
         {
             CurrentDevice = AnalyticsInfo.VersionInfo.DeviceFamily;
+        }
+
+        public bool SupportsContinuum
+        {
+            get
+            {
+                return (bool)this.GetValue(SupportsContinuumProperty);
+            }
+            set
+            {
+                this.SetValue(SupportsContinuumProperty, value);
+            }
         }
 
         /// <summary>
@@ -87,7 +107,7 @@ namespace WinUX.Xaml.StateTriggers
                     trigger.IsActive = newVal == DeviceType.Desktop;
                     break;
                 case "Windows.Mobile":
-                    trigger.IsActive = IsInContinuum()
+                    trigger.IsActive = IsInContinuum() && trigger.SupportsContinuum
                                            ? newVal == DeviceType.ContinuumPhone
                                            : newVal == DeviceType.Mobile;
                     break;

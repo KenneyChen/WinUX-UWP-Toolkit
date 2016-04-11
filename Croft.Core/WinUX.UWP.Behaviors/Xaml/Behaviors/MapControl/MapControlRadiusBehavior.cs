@@ -34,7 +34,7 @@ namespace WinUX.Xaml.Behaviors.MapControl
             new PropertyMetadata(null, OnCenterChanged));
 
         public static readonly DependencyProperty RadiusProperty = DependencyProperty.Register(
-            "Radius",
+            nameof(Radius),
             typeof(double),
             typeof(MapControlRadiusBehavior),
             new PropertyMetadata(0.0, OnRadiusChanged));
