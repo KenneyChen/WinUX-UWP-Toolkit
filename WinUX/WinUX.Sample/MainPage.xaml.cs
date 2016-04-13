@@ -33,5 +33,10 @@ namespace WinUX.Sample
         {
             ((Frame)Window.Current.Content).Navigate(typeof(ControlsView));
         }
+
+        private void OnValidationClicked(object sender, RoutedEventArgs e)
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(ValidationView));
+        }
     }
 }

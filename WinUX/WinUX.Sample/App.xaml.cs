@@ -4,6 +4,7 @@
 
     using Windows.ApplicationModel;
     using Windows.ApplicationModel.Activation;
+    using Windows.UI.Core;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Navigation;
@@ -67,6 +68,23 @@
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.BackRequested += this.OnBackRequested;
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            var frame = Window.Current.Content as Frame;
+            if (frame != null)
+            {
+                if (frame.CanGoBack)
+                {
+                    frame.GoBack();
+                    e.Handled = true;
+                }
+            }
         }
 
         /// <summary>

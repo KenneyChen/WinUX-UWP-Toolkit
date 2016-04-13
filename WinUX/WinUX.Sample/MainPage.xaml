@@ -18,10 +18,13 @@
                 <ScrollViewer>
                     <StackPanel>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                            <Button Content="Behaviors" Click="OnBehaviorsClicked" HorizontalAlignment="Stretch" />
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
                             <Button Content="Controls" Click="OnControlsClicked" HorizontalAlignment="Stretch" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Behaviors" Click="OnBehaviorsClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="Validation" Click="OnValidationClicked" HorizontalAlignment="Stretch" />
                         </Border>
                     </StackPanel>
                 </ScrollViewer>

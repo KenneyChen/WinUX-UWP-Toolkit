@@ -113,6 +113,7 @@
     <Compile Include="Validation\Rules\DoubleValidationRule.cs" />
     <Compile Include="Validation\Rules\EmailValidationRule.cs" />
     <Compile Include="Validation\Rules\IntValidationRule.cs" />
+    <Compile Include="Validation\Rules\RegexValidationRule.cs" />
     <Compile Include="Validation\Rules\UrlValidationRule.cs" />
     <Compile Include="Validation\ValidationRules.cs" />
     <Compile Include="Xaml\Controls\Validation\ValidatingTextBox.cs" />

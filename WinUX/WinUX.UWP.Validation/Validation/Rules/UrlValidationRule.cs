@@ -9,7 +9,7 @@
         /// <summary>
         /// Gets the error message to display for the rule.
         /// </summary>
-        public override string ErrorMessage => "Value is not a valid URL.";
+        public override string ErrorMessage => "The URL is invalid.";
 
         /// <summary>
         /// Validates an object value with this rule.

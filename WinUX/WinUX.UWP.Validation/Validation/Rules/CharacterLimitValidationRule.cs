@@ -41,7 +41,7 @@ namespace WinUX.Validation.Rules
         /// <summary>
         /// Gets the error message to display for the rule.
         /// </summary>
-        public override string ErrorMessage => $"Value length must be between {this.MinLength} and {this.MaxLength}.";
+        public override string ErrorMessage => $"The value must be between {this.MinLength} and {this.MaxLength} characters.";
 
         /// <summary>
         /// Gets or sets the min length.
