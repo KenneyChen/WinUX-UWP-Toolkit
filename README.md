@@ -18,12 +18,13 @@ WinUX is an on-going project with new features added regularly so please accept 
 ## <a id="components">Get the components</a>
 If you're not looking to get the complete WinUX toolkit, you can easily get your hands on the core components (available on Nuget) for your Windows app needs. 
 
-#### WinUX.Common [![NuGet](https://img.shields.io/nuget/v/WinUX.Common.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.Common/)
-#### WinUX.UWP.Core [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Core.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.Core/)
-#### WinUX.UWP.Behaviors [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Behaviors.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.Behaviors/)
-#### WinUX.UWP.StateTriggers [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.StateTriggers.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.StateTriggers/)
-#### WinUX.UWP.Validation [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Validation.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.Validation/)
-#### WinUX.UWP.ValueConverters [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.ValueConverters.svg?style=flat-square)](https://www.nuget.org/packages/WinUX.UWP.ValueConverters/)
+#### WinUX.Common [![NuGet](https://img.shields.io/nuget/v/WinUX.Common.svg)](https://www.nuget.org/packages/WinUX.Common/)
+#### WinUX.UWP.Core [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Core.svg)](https://www.nuget.org/packages/WinUX.UWP.Core/)
+#### WinUX.UWP.Behaviors [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Behaviors.svg)](https://www.nuget.org/packages/WinUX.UWP.Behaviors/)
+#### WinUX.UWP.Controls [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Controls.svg)](https://www.nuget.org/packages/WinUX.UWP.Controls/)
+#### WinUX.UWP.StateTriggers [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.StateTriggers.svg)](https://www.nuget.org/packages/WinUX.UWP.StateTriggers/)
+#### WinUX.UWP.Validation [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.Validation.svg)](https://www.nuget.org/packages/WinUX.UWP.Validation/)
+#### WinUX.UWP.ValueConverters [![NuGet](https://img.shields.io/nuget/v/WinUX.UWP.ValueConverters.svg)](https://www.nuget.org/packages/WinUX.UWP.ValueConverters/)
 
 ## <a id="contributing">Contributing</a>
 Everyone is welcome to contribute towards the WinUX UWP toolkit. If you find an issue, please could you raise it in the [issues](https://github.com/jamesmcroft/WinUX-UWP-Toolkit/issues) section or it would be fantastic if you could have a look at rectifying the issue and submitting a pull request. 
