@@ -107,6 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Xaml\Behaviors\Button\ButtonClickedBehavior.cs" />
     <Compile Include="Xaml\Behaviors\Image\FileThumbnailImageSourceBehavior.cs" />
     <Compile Include="Xaml\Behaviors\MapControl\MapControlRadiusBehavior.cs" />
     <Compile Include="Xaml\Behaviors\WinComposition\UIElementParallaxEffectBehavior.cs" />
@@ -119,9 +120,7 @@
       <Name>WinUX.UWP.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Xaml\Behaviors\Button\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
