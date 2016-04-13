@@ -34,9 +34,19 @@ namespace WinUX.Sample
             ((Frame)Window.Current.Content).Navigate(typeof(ControlsView));
         }
 
+        private void OnStateTriggersClicked(object sender, RoutedEventArgs e)
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(StateTriggersView));
+        }
+
         private void OnValidationClicked(object sender, RoutedEventArgs e)
         {
             ((Frame)Window.Current.Content).Navigate(typeof(ValidationView));
+        }
+
+        private void OnValueConvertersClicked(object sender, RoutedEventArgs e)
+        {
+            ((Frame)Window.Current.Content).Navigate(typeof(ValueConverterView));
         }
     }
 }

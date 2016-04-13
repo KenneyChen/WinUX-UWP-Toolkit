@@ -108,8 +108,14 @@
     <Compile Include="Views\ControlsView.xaml.cs">
       <DependentUpon>ControlsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StateTriggersView.xaml.cs">
+      <DependentUpon>StateTriggersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ValidationView.xaml.cs">
       <DependentUpon>ValidationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ValueConverterView.xaml.cs">
+      <DependentUpon>ValueConverterView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +151,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\StateTriggersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ValidationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ValueConverterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

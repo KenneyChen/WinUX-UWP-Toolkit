@@ -24,7 +24,13 @@
                             <Button Content="Controls" Click="OnControlsClicked" HorizontalAlignment="Stretch" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                            <Button Content="StateTriggers" Click="OnStateTriggersClicked" HorizontalAlignment="Stretch" />
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
                             <Button Content="Validation" Click="OnValidationClicked" HorizontalAlignment="Stretch" />
+                        </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                            <Button Content="ValueConverters" Click="OnValueConvertersClicked" HorizontalAlignment="Stretch" />
                         </Border>
                     </StackPanel>
                 </ScrollViewer>

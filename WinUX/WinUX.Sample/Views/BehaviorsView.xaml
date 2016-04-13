@@ -7,6 +7,7 @@
     xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:mapControl="using:WinUX.Xaml.Behaviors.MapControl"
+    xmlns:validation="using:WinUX.Xaml.Controls.Validation"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -22,7 +23,34 @@
         </Grid.ChildrenTransitions>
 
         <Pivot>
-            <PivotItem Header="MapControl - Radius behavior" Margin="10,0,10,10">
+            <PivotItem Header="Button" Margin="10,0,10,10">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ScrollViewer>
+                        <StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Image" Margin="10,0,10,10">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ScrollViewer>
+                        <StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="ListViewBase" Margin="10,0,10,10">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ScrollViewer>
+                        <StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="MapControl - Radius" Margin="10,0,10,10">
                 <RelativePanel>
                     <maps:MapControl x:Name="Map" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Center="{x:Bind ViewModel.MapCenter, Mode=TwoWay}" ZoomLevel="{x:Bind ViewModel.MapZoomLevel, Mode=TwoWay}" WatermarkMode="On">
                         <interactivity:Interaction.Behaviors>
@@ -30,6 +58,15 @@
                         </interactivity:Interaction.Behaviors>
                     </maps:MapControl>
                 </RelativePanel>
+            </PivotItem>
+
+            <PivotItem Header="WinComposition - Parallax" Margin="10,0,10,10">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ScrollViewer>
+                        <StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
             </PivotItem>
         </Pivot>
     </Grid>
