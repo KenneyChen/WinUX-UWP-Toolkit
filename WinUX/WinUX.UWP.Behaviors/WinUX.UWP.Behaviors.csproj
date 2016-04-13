@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="Xaml\Behaviors\Button\ButtonClickedBehavior.cs" />
     <Compile Include="Xaml\Behaviors\Image\FileThumbnailImageSourceBehavior.cs" />
+    <Compile Include="Xaml\Behaviors\ListViewBase\ScrollToSelectedItemBehavior.cs" />
     <Compile Include="Xaml\Behaviors\MapControl\MapControlRadiusBehavior.cs" />
     <Compile Include="Xaml\Behaviors\WinComposition\UIElementParallaxEffectBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
