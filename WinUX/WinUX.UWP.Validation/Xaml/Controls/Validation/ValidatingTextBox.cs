@@ -33,7 +33,7 @@ namespace WinUX.Xaml.Controls.Validation
                 "MandatoryValidationMessage",
                 typeof(string),
                 typeof(ValidatingTextBox),
-                new PropertyMetadata("Text required."));
+                new PropertyMetadata("A value is required."));
 
         private bool _isTemplateApplied;
 

@@ -9,8 +9,6 @@
 
 namespace WinUX.Sample.ViewModels
 {
-    using System;
-
     using Windows.Devices.Geolocation;
 
     using GalaSoft.MvvmLight;
@@ -43,8 +41,6 @@ namespace WinUX.Sample.ViewModels
 
             this.SearchRadius = 10.ToMeters();
             this.MapZoomLevel = this.SearchRadius.ToMiles().ToZoomLevel();
-
-            this.OnPositionChanged(this.locationHelper.CurrentPosition);
         }
 
         /// <summary>
@@ -88,7 +84,7 @@ namespace WinUX.Sample.ViewModels
             }
             set
             {
-                this.Set(ref this.mapCenter, value);
+                this.Set(() => this.MapCenter, ref this.mapCenter, value);
             }
         }
 
@@ -112,7 +108,6 @@ namespace WinUX.Sample.ViewModels
             if (geoposition?.Coordinate != null)
             {
                 this.CurrentPosition = geoposition.Coordinate.Point;
-                this.MapCenter = this.CurrentPosition;
             }
         }
     }

@@ -54,23 +54,23 @@
                     <ScrollViewer>
                         <StackPanel>
                             <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                                <controls:ValidatingTextBox IsMandatory="True" Header="Integer example" Text="One" ValidationRules="{StaticResource IntSample}" />
-                            </Border>
-
-                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                                <controls:ValidatingTextBox IsMandatory="True" Header="Double example" Text="One point five" ValidationRules="{StaticResource DoubleSample}" />
-                            </Border>
-
-                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                                <controls:ValidatingTextBox IsMandatory="True" Header="URL example" Text="http://www.jamescroft.co.uk/blog" ValidationRules="{StaticResource UrlSample}" />
-                            </Border>
-
-                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                                <controls:ValidatingTextBox IsMandatory="True" Header="Email example" Text="user@website.com" ValidationRules="{StaticResource EmailSample}" />
-                            </Border>
-
-                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
                                 <controls:ValidatingTextBox IsMandatory="True" Header="Character limit example" Text="This text is far too long" ValidationRules="{StaticResource CharacterLimitSample}" />
+                            </Border>
+
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <controls:ValidatingTextBox IsMandatory="True" Header="Double example" Text="One point five" ValidationRules="{StaticResource DoubleSample}" MandatoryValidationMessage="A number is required." />
+                            </Border>
+
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <controls:ValidatingTextBox IsMandatory="True" Header="Email example" Text="user@website.com" ValidationRules="{StaticResource EmailSample}" MandatoryValidationMessage="An e-mail address is required." />
+                            </Border>
+
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <controls:ValidatingTextBox IsMandatory="True" Header="Integer example" Text="One" ValidationRules="{StaticResource IntSample}" MandatoryValidationMessage="A number is required." />
+                            </Border>
+
+                            <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <controls:ValidatingTextBox IsMandatory="True" Header="URL example" Text="http://www.jamescroft.co.uk/blog" ValidationRules="{StaticResource UrlSample}" MandatoryValidationMessage="A URL is required." />
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
