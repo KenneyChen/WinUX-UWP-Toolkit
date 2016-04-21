@@ -128,6 +128,7 @@
     <Compile Include="Messaging\Dialogs\MessageDialogHelper.cs" />
     <Compile Include="Messaging\Notifications\NotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\LocalStorageEventListener.cs" />
     <Compile Include="Storage\StorageFileProperty.cs" />
     <Compile Include="Storage\StorageHelper.cs" />
     <Compile Include="Xaml\Controls\MapElement\MapElementDataContext.cs" />
