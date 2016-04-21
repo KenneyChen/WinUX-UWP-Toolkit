@@ -6,9 +6,13 @@
 
 namespace WinUX.Sample
 {
+    using System;
+
+    using Windows.Storage;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
+    using WinUX.Messaging.Dialogs;
     using WinUX.Sample.Views;
 
     /// <summary>
@@ -16,12 +20,16 @@ namespace WinUX.Sample
     /// </summary>
     public sealed partial class MainPage
     {
+        private MessageDialogHelper dialog;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPage"/> class.
         /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
+
+            this.dialog = new MessageDialogHelper();
         }
 
         private void OnBehaviorsClicked(object sender, RoutedEventArgs e)
@@ -47,6 +55,13 @@ namespace WinUX.Sample
         private void OnValueConvertersClicked(object sender, RoutedEventArgs e)
         {
             ((Frame)Window.Current.Content).Navigate(typeof(ValueConverterView));
+        }
+
+        private async void OnThrowExceptionClicked(object sender, RoutedEventArgs e)
+        {
+            await this.dialog.ShowAsync($"Log file can be found, if AppLogHandler has been started, here: '{ApplicationData.Current.LocalFolder.Path}'");
+
+            throw new NotSupportedException("An exception has been thrown due to a button being pressed. This exception will be handled by the handler.");
         }
     }
 }

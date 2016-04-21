@@ -117,6 +117,7 @@
     <Compile Include="Exceptions\ControlNotFoundException.cs" />
     <Compile Include="Extensions\AccentColorExtensions.cs" />
     <Compile Include="Extensions\AnalyticsInfoExtensions.cs" />
+    <Compile Include="Diagnostics\AppLogHandler.cs" />
     <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />

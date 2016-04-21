@@ -32,6 +32,9 @@
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
                             <Button Content="ValueConverters" Click="OnValueConvertersClicked" HorizontalAlignment="Stretch" />
                         </Border>
+                        <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                            <Button Content="Throw exception" Click="OnThrowExceptionClicked" HorizontalAlignment="Stretch" />
+                        </Border>
                     </StackPanel>
                 </ScrollViewer>
             </PivotItem>
