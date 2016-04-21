@@ -15,27 +15,24 @@ namespace WinUX.Storage
     using Windows.Storage.Streams;
 
     using WinUX.Enums;
+    using WinUX.Extensions;
 
     /// <summary>
     /// A helper class for handling the save and load of <see cref="StorageFile"/>.
     /// </summary>
     public class StorageHelper
     {
-        private const string LogsStorageFolderName = "Logs";
-
-        private const string UserStorageFolderName = "User";
-
         /// <summary>
-        /// Saves a byte array to a StorageFile in the TemporaryFolder with a given file extension, e.g. .jpg
+        /// Saves a byte array to a <see cref="StorageFile"/> in the Temp storage folder of the application with a given file extension.
         /// </summary>
         /// <param name="bytes">
         /// The byte array to save.
         /// </param>
         /// <param name="extension">
-        /// The file extension. For example, .jpg
+        /// The file extension.
         /// </param>
         /// <returns>
-        /// Returns the temporarily stored file.
+        /// Returns the temporary <see cref="StorageFile"/> that is created.
         /// </returns>
         public async Task<StorageFile> SaveBytesToTempFolderAsync(byte[] bytes, string extension)
         {
@@ -53,16 +50,16 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Saves a string value to a StorageFile in the TemporaryFolder with a given file extension, e.g. .txt
+        /// Saves a string value to a <see cref="StorageFile"/> in the Temp storage folder of the application with a given file extension.
         /// </summary>
         /// <param name="content">
         /// The string value to save.
         /// </param>
         /// <param name="extension">
-        /// The file extension. For example, .txt
+        /// The file extension.
         /// </param>
         /// <returns>
-        /// Returns the temporarily stored file.
+        /// Returns the temporary <see cref="StorageFile"/> that is created.
         /// </returns>
         public async Task<StorageFile> SaveTextToTempFolderAsync(string content, string extension)
         {
@@ -80,19 +77,22 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Saves a byte array to a StorageFile in the given StorageFolder with a given file name, e.g. image.jpg
+        /// Saves a byte array to a <see cref="StorageFile"/> in the given <see cref="StorageFolder"/> of the application with a given file name.
         /// </summary>
+        /// <remarks>
+        /// The file name provided must also contain the extension.
+        /// </remarks>
         /// <param name="folder">
-        /// The StorageFolder to save the file to.
+        /// The <see cref="StorageFolder"/> to save the file to.
         /// </param>
         /// <param name="bytes">
         /// The byte array to save.
         /// </param>
         /// <param name="fileName">
-        /// The file name. For example, image.jpg
+        /// The file name.
         /// </param>
         /// <returns>
-        /// Returns the stored file.
+        /// Returns the <see cref="StorageFile"/> that is created.
         /// </returns>
         public async Task<StorageFile> SaveBytesToFolderAsync(StorageFolder folder, byte[] bytes, string fileName)
         {
@@ -118,19 +118,19 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Saves a string value to a StorageFile in the given StorageFolder with a given file name, e.g. text.txt
+        /// Saves a string value to a <see cref="StorageFile"/> in the given <see cref="StorageFolder"/> of the application with a given file name.
         /// </summary>
         /// <param name="folder">
-        /// The StorageFolder to save the file to.
+        /// The <see cref="StorageFolder"/> to save the file to.
         /// </param>
         /// <param name="text">
         /// The string value to save.
         /// </param>
         /// <param name="fileName">
-        /// The file name. For example, text.txt
+        /// The file name.
         /// </param>
         /// <returns>
-        /// Returns the stored file.
+        /// Returns the <see cref="StorageFile"/> that is created.
         /// </returns>
         public async Task<StorageFile> SaveTextToFolderAsync(StorageFolder folder, string text, string fileName)
         {
@@ -156,10 +156,13 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Retrieves a StorageFile from a given StorageFolderLocation with a given file name. Optional parameter to create the file if it doesn't exist.
+        /// Retrieves a <see cref="StorageFile"/> from a given <see cref="StorageFolderLocation"/> string with a given file name.
         /// </summary>
+        /// <remarks>
+        /// The <param name="createIfNotExists">create if not exists</param> boolean parameter will create the <see cref="StorageFile"/> with the given <param name="fileName">file name</param> in the location if true.
+        /// </remarks>
         /// <param name="location">
-        /// The StorageFolderLocation.
+        /// The <see cref="StorageFolderLocation"/> string.
         /// </param>
         /// <param name="fileName">
         /// The file name.
@@ -171,7 +174,7 @@ namespace WinUX.Storage
         /// Returns the StorageFile, if exists.
         /// </returns>
         public async Task<StorageFile> RetrieveStorageFileAsync(
-            StorageFolderLocation location,
+            string location,
             string fileName,
             bool createIfNotExists)
         {
@@ -194,29 +197,31 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Retrieves a StorageFolder for a given StorageFolderLocation.
+        /// Retrieves a <see cref="StorageFolder"/> for a given <see cref="StorageFolderLocation"/> string.
         /// </summary>
         /// <param name="location">
-        /// The StorageFolderLocation to find.
+        /// The <see cref="StorageFolderLocation"/> string to retrieve a <see cref="StorageFolder"/> for.
         /// </param>
         /// <returns>
-        /// Returns the StorageFolder.
+        /// Returns a <see cref="StorageFolder"/>.
         /// </returns>
-        public async Task<StorageFolder> RetrieveStorageFolderAsync(StorageFolderLocation location)
+        public async Task<StorageFolder> RetrieveStorageFolderAsync(string location)
         {
+            if (location.IsEmpty())
+            {
+                throw new ArgumentNullException(nameof(location));
+            }
+
             var folder = ApplicationData.Current.LocalFolder;
             switch (location)
             {
                 case StorageFolderLocation.Root:
                     break;
-                case StorageFolderLocation.User:
-                    folder = await folder.CreateFolderAsync(UserStorageFolderName, CreationCollisionOption.OpenIfExists);
-                    break;
-                case StorageFolderLocation.Logs:
-                    folder = await folder.CreateFolderAsync(LogsStorageFolderName, CreationCollisionOption.OpenIfExists);
-                    break;
                 case StorageFolderLocation.Temp:
                     folder = ApplicationData.Current.TemporaryFolder;
+                    break;
+                default:
+                    folder = await folder.CreateFolderAsync(location, CreationCollisionOption.OpenIfExists);
                     break;
             }
 
@@ -224,13 +229,13 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Retrieves a string value from a StorageFile by the given file path.
+        /// Retrieves a string value from a <see cref="StorageFile"/> at the given <param name="filePath">file path</param>.
         /// </summary>
         /// <param name="filePath">
-        /// The file path to the destined StorageFile.
+        /// The file path of the <see cref="StorageFile"/> to retrieve data from.
         /// </param>
         /// <returns>
-        /// Returns the stored string value of the StorageFile located at the given file path.
+        /// Returns the stored string value of the <see cref="StorageFile"/>.
         /// </returns>
         public async Task<string> GetTextFromFileAsync(string filePath)
         {
@@ -246,13 +251,13 @@ namespace WinUX.Storage
         }
 
         /// <summary>
-        /// Retrieves a byte array from a StorageFile by the given file path.
+        /// Retrieves a byte array from a <see cref="StorageFile"/> at the given <param name="filePath">file path</param>.
         /// </summary>
         /// <param name="filePath">
-        /// The file path to the destined StorageFile.
+        /// The file path of the <see cref="StorageFile"/> to retrieve data from.
         /// </param>
         /// <returns>
-        /// Returns the stored byte array of the StorageFile located at the given file path.
+        /// Returns the stored byte array of the <see cref="StorageFile"/>.
         /// </returns>
         public async Task<byte[]> GetByteArrayFromFileAsync(string filePath)
         {

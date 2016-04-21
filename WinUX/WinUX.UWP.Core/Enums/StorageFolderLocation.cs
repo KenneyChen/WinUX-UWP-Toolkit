@@ -1,19 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="StorageFolderLocation.cs" company="James Croft">
-//   Copyright (c) 2015 James Croft.
+//   Copyright (c) 2016 James Croft.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace WinUX.Enums
 {
     /// <summary>
-    /// Available storage folder locations.
+    /// A common set of storage folder locations.
     /// </summary>
-    public enum StorageFolderLocation
+    public class StorageFolderLocation
     {
-        Root,
-        User,
-        Temp,
-        Logs
+        public const string Root = "Root";
+
+        public const string User = "User";
+
+        public const string Temp = "Temp";
+
+        public const string Logs = "Logs";
     }
 }
