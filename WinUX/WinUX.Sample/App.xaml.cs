@@ -54,7 +54,7 @@ namespace WinUX.Sample
             {
                 // Starts the WinUX app exception handler with auto-logging. 
                 // Calling a method from Logger.Log will also log out.
-                await AppLogHandler.StartAsync();
+                await AppLogHandler.Instance.StartAsync();
 
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }

@@ -20,16 +20,12 @@ namespace WinUX.Sample
     /// </summary>
     public sealed partial class MainPage
     {
-        private MessageDialogHelper dialog;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPage"/> class.
         /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
-
-            this.dialog = new MessageDialogHelper();
         }
 
         private void OnBehaviorsClicked(object sender, RoutedEventArgs e)
@@ -59,7 +55,7 @@ namespace WinUX.Sample
 
         private async void OnThrowExceptionClicked(object sender, RoutedEventArgs e)
         {
-            await this.dialog.ShowAsync($"Log file can be found, if AppLogHandler has been started, here: '{ApplicationData.Current.LocalFolder.Path}'");
+            await MessageDialogHelper.Instance.ShowAsync($"Log file can be found, if AppLogHandler has been started, here: '{ApplicationData.Current.LocalFolder.Path}'");
 
             throw new NotSupportedException("An exception has been thrown due to a button being pressed. This exception will be handled by the handler.");
         }

@@ -54,7 +54,7 @@
                 <RelativePanel>
                     <maps:MapControl x:Name="Map" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Center="{x:Bind ViewModel.MapCenter, Mode=TwoWay}" ZoomLevel="{x:Bind ViewModel.MapZoomLevel, Mode=TwoWay}" WatermarkMode="On">
                         <interactivity:Interaction.Behaviors>
-                            <mapControl:MapControlRadiusBehavior Center="{x:Bind ViewModel.CurrentPosition, Mode=TwoWay}" Radius="{x:Bind ViewModel.SearchRadius, Mode=OneWay}" RadiusFillColor="{StaticResource MapRadiusFillColor}" RadiusBorderColor="{StaticResource MapRadiusBorderColor}" />
+                            <mapControl:MapControlRadiusBehavior Center="{Binding CurrentPosition, Mode=TwoWay}" Radius="{Binding SearchRadius, Mode=OneWay}" RadiusFillColor="{StaticResource MapRadiusFillColor}" RadiusBorderColor="{StaticResource MapRadiusBorderColor}" />
                         </interactivity:Interaction.Behaviors>
                     </maps:MapControl>
                 </RelativePanel>

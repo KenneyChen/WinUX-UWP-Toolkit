@@ -22,59 +22,66 @@ namespace WinUX.Diagnostics
     /// <summary>
     /// Defines a handler for logging as part of the <see cref="Application"/>.
     /// </summary>
-    public static class AppLogHandler
+    public class AppLogHandler
     {
-        private static bool isHandling;
+        private static AppLogHandler instance;
 
-        private static StorageFile logFile;
+        /// <summary>
+        /// Gets a static instance of the <see cref="AppLogHandler"/>.
+        /// </summary>
+        public static AppLogHandler Instance => instance ?? (instance = new AppLogHandler());
+
+        private bool isHandling;
+
+        private StorageFile logFile;
 
         /// <summary>
         /// Starts the handler.
         /// </summary>
-        public static async Task StartAsync()
+        public async Task StartAsync()
         {
-            if (Application.Current == null || isHandling)
+            if (Application.Current == null || this.isHandling)
             {
                 return;
             }
 
-            await SetupEventListener();
+            await this.SetupEventListener();
 
-            Application.Current.UnhandledException += OnAppUnhandledExceptionThrown;
-            TaskScheduler.UnobservedTaskException += OnAppUnobservedTaskExceptionThrown;
+            Application.Current.UnhandledException += this.OnAppUnhandledExceptionThrown;
+            TaskScheduler.UnobservedTaskException += this.OnAppUnobservedTaskExceptionThrown;
 
-            isHandling = true;
+            this.isHandling = true;
         }
 
-        private static async Task SetupEventListener()
+        private async Task SetupEventListener()
         {
-            logFile =
+            this.logFile =
                 await
                 ApplicationData.Current.LocalFolder.CreateFileAsync(
                     $"log-{DateTime.Now.ToString("dd-MM-yyyy")}.txt",
                     CreationCollisionOption.OpenIfExists);
 
-            var listener = new LocalStorageEventListener(logFile);
+            var listener = new LocalStorageEventListener(this.logFile);
             listener.EnableEvents(Logger.Log, EventLevel.Verbose);
         }
 
         /// <summary>
         /// Stops the handler.
         /// </summary>
-        public static void Stop()
+        public void Stop()
         {
-            if (Application.Current == null || !isHandling)
+            if (Application.Current == null || !this.isHandling)
             {
                 return;
             }
 
-            Application.Current.UnhandledException -= OnAppUnhandledExceptionThrown;
-            TaskScheduler.UnobservedTaskException -= OnAppUnobservedTaskExceptionThrown;
+            Application.Current.UnhandledException -= this.OnAppUnhandledExceptionThrown;
+            TaskScheduler.UnobservedTaskException -= this.OnAppUnobservedTaskExceptionThrown;
 
-            isHandling = false;
+            this.isHandling = false;
         }
 
-        private static void OnAppUnobservedTaskExceptionThrown(object sender, UnobservedTaskExceptionEventArgs args)
+        private void OnAppUnobservedTaskExceptionThrown(object sender, UnobservedTaskExceptionEventArgs args)
         {
             args.SetObserved();
 
@@ -93,7 +100,7 @@ namespace WinUX.Diagnostics
             }
         }
 
-        private static void OnAppUnhandledExceptionThrown(object sender, UnhandledExceptionEventArgs args)
+        private void OnAppUnhandledExceptionThrown(object sender, UnhandledExceptionEventArgs args)
         {
             args.Handled = true;
 

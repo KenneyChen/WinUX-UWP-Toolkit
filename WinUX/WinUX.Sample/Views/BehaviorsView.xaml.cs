@@ -14,6 +14,8 @@
         public BehaviorsView()
         {
             this.InitializeComponent();
+
+            this.DataContext = this.ViewModel;
         }
 
         public BehaviorsViewModel ViewModel => this.viewModel ?? (this.viewModel = new BehaviorsViewModel());
