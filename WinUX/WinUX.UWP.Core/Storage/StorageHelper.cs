@@ -20,8 +20,12 @@ namespace WinUX.Storage
     /// <summary>
     /// A helper class for handling the save and load of <see cref="StorageFile"/>.
     /// </summary>
-    public static class StorageHelper
+    public class StorageHelper
     {
+        private static StorageHelper instance;
+
+        public static StorageHelper Instance => instance ?? (instance = new StorageHelper());
+
         /// <summary>
         /// Saves a byte array to a <see cref="StorageFile"/> in the Temp storage folder of the application with a given file extension.
         /// </summary>
@@ -34,7 +38,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the temporary <see cref="StorageFile"/> that is created.
         /// </returns>
-        public static async Task<StorageFile> SaveBytesToTempFolderAsync(byte[] bytes, string extension)
+        public async Task<StorageFile> SaveBytesToTempFolderAsync(byte[] bytes, string extension)
         {
             if (bytes == null)
             {
@@ -61,7 +65,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the temporary <see cref="StorageFile"/> that is created.
         /// </returns>
-        public static async Task<StorageFile> SaveTextToTempFolderAsync(string content, string extension)
+        public async Task<StorageFile> SaveTextToTempFolderAsync(string content, string extension)
         {
             if (string.IsNullOrWhiteSpace(content))
             {
@@ -94,7 +98,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the <see cref="StorageFile"/> that is created.
         /// </returns>
-        public static async Task<StorageFile> SaveBytesToFolderAsync(StorageFolder folder, byte[] bytes, string fileName)
+        public async Task<StorageFile> SaveBytesToFolderAsync(StorageFolder folder, byte[] bytes, string fileName)
         {
             if (folder == null)
             {
@@ -132,7 +136,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the <see cref="StorageFile"/> that is created.
         /// </returns>
-        public static async Task<StorageFile> SaveTextToFolderAsync(StorageFolder folder, string text, string fileName)
+        public async Task<StorageFile> SaveTextToFolderAsync(StorageFolder folder, string text, string fileName)
         {
             if (folder == null)
             {
@@ -173,7 +177,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the StorageFile, if exists.
         /// </returns>
-        public static async Task<StorageFile> RetrieveStorageFileAsync(
+        public async Task<StorageFile> RetrieveStorageFileAsync(
             string location,
             string fileName,
             bool createIfNotExists)
@@ -183,7 +187,7 @@ namespace WinUX.Storage
                 throw new ArgumentNullException(nameof(fileName));
             }
 
-            var folder = await RetrieveStorageFolderAsync(location);
+            var folder = await this.RetrieveStorageFolderAsync(location);
 
             var file = await GetFileAsync(folder, fileName);
             if (file != null || !createIfNotExists)
@@ -205,7 +209,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns a <see cref="StorageFolder"/>.
         /// </returns>
-        public static async Task<StorageFolder> RetrieveStorageFolderAsync(string location)
+        public async Task<StorageFolder> RetrieveStorageFolderAsync(string location)
         {
             if (location.IsEmpty())
             {
@@ -237,7 +241,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the stored string value of the <see cref="StorageFile"/>.
         /// </returns>
-        public static async Task<string> GetTextFromFileAsync(string filePath)
+        public async Task<string> GetTextFromFileAsync(string filePath)
         {
             if (string.IsNullOrWhiteSpace("filePath"))
             {
@@ -259,7 +263,7 @@ namespace WinUX.Storage
         /// <returns>
         /// Returns the stored byte array of the <see cref="StorageFile"/>.
         /// </returns>
-        public static async Task<byte[]> GetByteArrayFromFileAsync(string filePath)
+        public async Task<byte[]> GetByteArrayFromFileAsync(string filePath)
         {
             filePath = filePath.Replace('/', '\\');
             var file = await StorageFile.GetFileFromPathAsync(filePath);
