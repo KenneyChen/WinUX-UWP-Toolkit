@@ -22,6 +22,13 @@ namespace WinUX.Messaging.Dialogs
     /// </summary>
     public class MessageDialogHelper : IDisposable
     {
+        private static MessageDialogHelper instance;
+
+        /// <summary>
+        /// Gets a static instance of the <see cref="MessageDialogHelper"/>.
+        /// </summary>
+        public static MessageDialogHelper Instance => instance ?? (instance = new MessageDialogHelper());
+
         private SemaphoreSlim _semaphore = new SemaphoreSlim(1);
 
         /// <summary>

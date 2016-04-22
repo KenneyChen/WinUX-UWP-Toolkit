@@ -22,6 +22,13 @@ namespace WinUX.Messaging.Notifications
     /// </summary>
     public class NotificationService
     {
+        private static NotificationService instance;
+
+        /// <summary>
+        /// Gets a static instance of the <see cref="NotificationService"/>.
+        /// </summary>
+        public static NotificationService Instance => instance ?? (instance = new NotificationService());
+
         /// <summary>
         /// Shows a toast notification without launch events.
         /// </summary>

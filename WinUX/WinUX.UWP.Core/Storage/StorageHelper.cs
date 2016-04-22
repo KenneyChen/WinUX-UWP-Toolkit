@@ -24,6 +24,9 @@ namespace WinUX.Storage
     {
         private static StorageHelper instance;
 
+        /// <summary>
+        /// Gets a static instance of the <see cref="StorageHelper"/>.
+        /// </summary>
         public static StorageHelper Instance => instance ?? (instance = new StorageHelper());
 
         /// <summary>

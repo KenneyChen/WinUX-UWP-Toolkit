@@ -20,6 +20,13 @@ namespace WinUX.Location
     /// </summary>
     public class GeolocationHelper
     {
+        private static GeolocationHelper instance;
+
+        /// <summary>
+        /// Gets a static instance of the <see cref="GeolocationHelper"/>.
+        /// </summary>
+        public static GeolocationHelper Instance => instance ?? (instance = new GeolocationHelper());
+
         private Geolocator _locator;
 
         /// <summary>
