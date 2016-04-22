@@ -288,7 +288,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -2109,7 +2109,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -3776,7 +3776,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -5441,7 +5441,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -7108,7 +7108,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -8773,7 +8773,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -10440,7 +10440,7 @@
           "lib/windows81/GalaSoft.MvvmLight.dll": {}
         }
       },
-      "NotificationsExtensions.Win10/14295.0.0": {
+      "NotificationsExtensions.Win10/14295.0.1": {
         "compile": {
           "lib/uap10.0/NotificationsExtensions.winmd": {}
         },
@@ -12602,11 +12602,11 @@
         "lib/xamarin.ios10/GalaSoft.MvvmLight.pdb"
       ]
     },
-    "NotificationsExtensions.Win10/14295.0.0": {
-      "sha512": "/FXUu5DHTQiEmd30MnPI4jWGm+fbrZA3plSdz/9NfW7DuNRk0t51NRiprT1dKvTK7IS8XuiqYQ2WD0Cn/WImEg==",
+    "NotificationsExtensions.Win10/14295.0.1": {
+      "sha512": "7guXcl341xsRlepVXP2bUPHGPDiSppHovo2nuV3u1Adf3GetT8aVKjvViXTP0SyJuGWA90ngvrbl+Z3G/PEDdA==",
       "type": "package",
       "files": [
-        "NotificationsExtensions.Win10.14295.0.0.nupkg.sha512",
+        "NotificationsExtensions.Win10.14295.0.1.nupkg.sha512",
         "NotificationsExtensions.Win10.nuspec",
         "lib/dotnet/NotificationsExtensions.Win10.NETCore.XML",
         "lib/dotnet/NotificationsExtensions.Win10.NETCore.dll",
