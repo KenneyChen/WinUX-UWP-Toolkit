@@ -117,6 +117,7 @@
     <Compile Include="Xaml\Converters\Colors\BrushToPrimaryAccentBrushConverter.cs" />
     <Compile Include="Xaml\Converters\Colors\BrushToPrimaryAccentColorConverter.cs" />
     <Compile Include="Xaml\Converters\DateTimeFormatConverter.cs" />
+    <Compile Include="Xaml\Converters\IntegerToDoubleValueConverter.cs" />
     <Compile Include="Xaml\Converters\EmptyStringToVisibilityConverter.cs" />
     <Compile Include="Xaml\Converters\EnumToBooleanConverter.cs" />
     <Compile Include="Xaml\Converters\EnumToVisibilityConverter.cs" />
