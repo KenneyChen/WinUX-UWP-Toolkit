@@ -29,6 +29,18 @@
                     </ScrollViewer>
                 </Grid>
             </PivotItem>
+
+            <PivotItem Header="RangeSlider">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <ScrollViewer>
+                        <StackPanel>
+                            <Border Margin="10,100,10,0" BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <controls:RangeSlider MinValue="0" MaxValue="100" />
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </PivotItem>
         </Pivot>
     </Grid>
 </Page>

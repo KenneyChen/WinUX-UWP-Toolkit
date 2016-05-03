@@ -109,6 +109,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Xaml\Controls\HeaderedTextBlock.cs" />
+    <Compile Include="Xaml\Controls\RangeSlider.cs" />
+    <Compile Include="Xaml\Controls\RangeSliderFlyout.cs" />
     <EmbeddedResource Include="Properties\WinUX.UWP.Controls.rd.xml" />
   </ItemGroup>
   <ItemGroup>

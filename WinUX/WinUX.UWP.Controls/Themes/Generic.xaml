@@ -55,4 +55,34 @@
         </Setter>
     </Style>
 
+    <Style TargetType="controls:RangeSlider">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid x:Name="DragArea" Height="40">
+                        <Rectangle Height="4" Fill="{StaticResource SliderTrackBackgroundThemeBrush}" VerticalAlignment="Top" />
+
+                        <Path x:Name="MinSlider" Data="M14.3333,0.444444 L1.33363,29.4449 L28.4444,29.4449 z" Fill="{StaticResource SystemControlBackgroundAccentBrush}" HorizontalAlignment="Left" Height="20" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="16" Stroke="{ThemeResource ApplicationForegroundThemeBrush}" StrokeThickness="0.25"/>
+                        <Path x:Name="MaxSlider" Data="M14.3333,0.444444 L1.33363,29.4449 L28.4444,29.4449 z" Fill="{StaticResource SystemControlBackgroundAccentBrush}" HorizontalAlignment="Left" Height="20" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="16" Stroke="{ThemeResource ApplicationForegroundThemeBrush}" StrokeThickness="0.25"/>
+
+                        <controls:RangeSliderFlyout x:Name="MinSliderFlyout" Height="32" Value="{Binding MinSelectedValue, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="Left" Foreground="White" Margin="-11,-70,0,0" />
+                        <controls:RangeSliderFlyout x:Name="MaxSliderFlyout" Height="32" Value="{Binding MaxSelectedValue, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="Left" Foreground="White" Margin="0,-70,-11,0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="controls:RangeSliderFlyout">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border Background="#FFFFFFFF" BorderThickness="2" BorderBrush="#FF888888" CornerRadius="2">
+                        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Value}" Margin="5" HorizontalAlignment="Left" Foreground="#FF000000" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
