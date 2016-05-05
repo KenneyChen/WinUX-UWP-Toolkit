@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.3.3</version>
+    <version>1.3.4</version>
     <title>WinUX.UWP</title>
     <authors>James Croft</authors>
     <owners>James Croft</owners>
@@ -11,7 +11,7 @@
     <iconUrl>http://jamescroft.co.uk/wp-content/uploads/2014/12/icon1.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>A complete collection of WinUX projects including Common, UWP.Core, UWP.Controls, UWP.Behaviors, UWP.StateTriggers, UWP.Validation and UWP.ValueConverters designed to use in your personal universal Windows apps.</description>
-    <releaseNotes>Updated complete package with new changes from UWP.Core. See GitHub Wiki (https://github.com/jamesmcroft/WinUX-UWP-Toolkit/wiki) for complete feature list.</releaseNotes>
+    <releaseNotes>Updated complete package with new changes from UWP.Controls and UWP.ValueConverters. See GitHub Wiki (https://github.com/jamesmcroft/WinUX-UWP-Toolkit/wiki) for complete feature list.</releaseNotes>
     <copyright>Copyright (c) 2016 James Croft</copyright>
     <tags>WinUX UWP Toolkit Validation UX XAML Common VisualState VisualStateTrigger ValueConverter AdaptiveTrigger Behaviors Controls Storage NotificationsExtensions Messaging Diagnostics Extensions .NET</tags>
   </metadata>
