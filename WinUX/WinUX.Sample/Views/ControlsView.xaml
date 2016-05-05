@@ -5,7 +5,46 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:WinUX.Xaml.Controls"
+    xmlns:converters="using:WinUX.Xaml.Converters"
+    xmlns:collections="using:WinUX.Collections"
+    xmlns:data="using:WinUX.Xaml.Data"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <converters:DoubleToTimeSpanConverter x:Key="DoubleToTimeSpanConverter" />
+            <converters:TimeSpanFormatConverter x:Key="TimeSpanFormatConverter" />
+
+            <converters:MultiIValueConverterConverter x:Key="DoubleToTimeSpanStringConverter">
+                <converters:MultiIValueConverterConverter.ConverterCollection>
+                    <collections:ValueConverterCollection>
+                        <collections:ValueConverterCollection.Converters>
+                            <data:ValueConverter Converter="{StaticResource DoubleToTimeSpanConverter}" />
+                            <data:ValueConverter Converter="{StaticResource TimeSpanFormatConverter}" ConverterParameter="mm\:ss\.ff" />
+                        </collections:ValueConverterCollection.Converters>
+                    </collections:ValueConverterCollection>
+                </converters:MultiIValueConverterConverter.ConverterCollection>
+            </converters:MultiIValueConverterConverter>
+
+            <Style x:Key="TimeSpanRangeSliderStyle" TargetType="controls:RangeSlider">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid x:Name="DragArea" Height="40">
+                                <Rectangle Height="4" Fill="{StaticResource SliderTrackBackgroundThemeBrush}" VerticalAlignment="Top" />
+
+                                <Path x:Name="MinSlider" Data="M14.3333,0.444444 L1.33363,29.4449 L28.4444,29.4449 z" Fill="{StaticResource SystemControlBackgroundAccentBrush}" HorizontalAlignment="Left" Height="20" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="16" Stroke="{ThemeResource ApplicationForegroundThemeBrush}" StrokeThickness="0.25"/>
+                                <Path x:Name="MaxSlider" Data="M14.3333,0.444444 L1.33363,29.4449 L28.4444,29.4449 z" Fill="{StaticResource SystemControlBackgroundAccentBrush}" HorizontalAlignment="Left" Height="20" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="16" Stroke="{ThemeResource ApplicationForegroundThemeBrush}" StrokeThickness="0.25"/>
+
+                                <controls:RangeSliderFlyout x:Name="MinSliderFlyout" Height="32" Value="{Binding MinSelectedValue, Converter={StaticResource DoubleToTimeSpanStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="Left" Foreground="White" Margin="-11,-70,0,0" />
+                                <controls:RangeSliderFlyout x:Name="MaxSliderFlyout" Height="32" Value="{Binding MaxSelectedValue, Converter={StaticResource DoubleToTimeSpanStringConverter}, RelativeSource={RelativeSource Mode=TemplatedParent}}" HorizontalAlignment="Left" Foreground="White" Margin="0,-70,-11,0" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
@@ -34,8 +73,20 @@
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <ScrollViewer>
                         <StackPanel>
-                            <Border Margin="10,100,10,0" BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                                <controls:RangeSlider MinValue="0" MaxValue="100" />
+                            <Border Margin="10,20,10,0" BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <StackPanel>
+                                    <controls:RangeSlider x:Name="DefaultRangeSlider" MinValue="0" MaxValue="100" />
+                                    <controls:HeaderedTextBlock x:Name="DefaultRangeSliderMinimumValue" Header="Minimum value" Orientation="Horizontal" />
+                                    <controls:HeaderedTextBlock x:Name="DefaultRangeSliderMaximumValue" Header="Maximum value" Orientation="Horizontal" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Margin="10,20,10,0" BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
+                                <StackPanel>
+                                    <controls:RangeSlider x:Name="TimeSpanRangeSlider" MinValue="0" MaxValue="120" Style="{StaticResource TimeSpanRangeSliderStyle}" />
+                                    <controls:HeaderedTextBlock x:Name="TimeSpanRangeSliderMinimumValue" Header="Minimum time value" Orientation="Horizontal" />
+                                    <controls:HeaderedTextBlock x:Name="TimeSpanRangeSliderMaximumValue" Header="Maximum time value" Orientation="Horizontal" />
+                                </StackPanel>
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
@@ -44,34 +95,3 @@
         </Pivot>
     </Grid>
 </Page>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

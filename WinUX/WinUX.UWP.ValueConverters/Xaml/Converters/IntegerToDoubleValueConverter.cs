@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DateTimeFormatConverter.cs" company="James Croft">
+// <copyright file="IntegerToDoubleValueConverter.cs" company="James Croft">
 //   Copyright (c) 2015 James Croft.
 // </copyright>
 // <summary>
-//   Defines the DoubleToIntegerValueConverter type.
+//   Defines a value converter for converting a double to an integer.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -13,10 +13,13 @@ namespace WinUX.Xaml.Converters
 
     using Windows.UI.Xaml.Data;
 
+    /// <summary>
+    /// Defines a value converter for converting a double to an integer.
+    /// </summary>
     public class IntegerToDoubleValueConverter : IValueConverter
     {
         /// <summary>
-        /// Converts a int value to double value.
+        /// Converts an int value to double value.
         /// </summary>
         /// <returns>
         /// Returns double value.

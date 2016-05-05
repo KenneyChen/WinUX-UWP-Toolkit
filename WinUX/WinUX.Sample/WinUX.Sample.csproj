@@ -192,6 +192,10 @@
       <Project>{D8CE4EA6-0F2E-42D7-B8B1-4254EF6F5412}</Project>
       <Name>WinUX.UWP.Validation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinUX.UWP.ValueConverters\WinUX.UWP.ValueConverters.csproj">
+      <Project>{F77C5AE3-4028-4AD7-A4D2-2CB4FCA60032}</Project>
+      <Name>WinUX.UWP.ValueConverters</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
