@@ -43,7 +43,7 @@ namespace WinUX.Extensions
         }
 
         /// <summary>
-        /// The get extended properties.
+        /// Gets extended properties for a given <see cref="StorageFile"/>.
         /// </summary>
         /// <param name="file">
         /// The file.
@@ -56,12 +56,43 @@ namespace WinUX.Extensions
             var properties = new List<StorageFileProperty>();
 
             var fileProps = await file.Properties.RetrievePropertiesAsync(null);
-                // Gets all available properties for the file.
 
             ProcessExtendedProperties(properties, fileProps);
 
             return properties;
         }
+
+        /// <summary>
+        /// Gets all available properties from a <see cref="StorageFile"/>.
+        /// </summary>
+        /// <param name="file">
+        /// The file.
+        /// </param>
+        /// <returns>
+        /// The <see cref="Task"/>.
+        /// </returns>
+        //public static async Task<IEnumerable<StorageFileProperty>> GetAllPropertiesAsync(this StorageFile file)
+        //{
+        //    var properties = new List<StorageFileProperty>();
+
+        //    var fileProps = await file.Properties.RetrievePropertiesAsync(null);
+
+        //    foreach (var fileProp in fileProps)
+        //    {
+        //        var propValue = fileProp.Value.ToString();
+        //        if (propValue.IsEmpty())
+        //        {
+        //            continue;
+        //        }
+
+        //        if (properties.FirstOrDefault(x => x.Name == fileProp.Key) == null)
+        //        {
+        //            properties.Add(new StorageFileProperty(fileProp.Key, propValue));
+        //        }
+        //    }
+
+        //    return properties;
+        //}
 
         private static void ProcessExtendedProperties(
             ICollection<StorageFileProperty> results,
@@ -478,6 +509,22 @@ namespace WinUX.Extensions
                         if (results.FirstOrDefault(x => x.Name == "Audio artist") == null)
                         {
                             results.Add(new StorageFileProperty("Audio artist", audioArtist));
+                        }
+                    }
+                }
+            }
+
+            if (props.ContainsKey("System.Music.BeatsPerMinute"))
+            {
+                var bpmObj = props["System.Music.BeatsPerMinute"];
+                if (bpmObj != null)
+                {
+                    var bpm = bpmObj.ToString();
+                    if (!bpm.IsEmpty())
+                    {
+                        if (results.FirstOrDefault(x => x.Name == "Beats-per-minute") == null)
+                        {
+                            results.Add(new StorageFileProperty("Beats-per-minute", bpm));
                         }
                     }
                 }
