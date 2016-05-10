@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:image="using:WinUX.Xaml.Behaviors.Image"
+    xmlns:winComposition="using:WinUX.Xaml.Behaviors.WinComposition"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -19,6 +20,11 @@
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontWeight" Value="Light" />
             <Setter Property="LineHeight" Value="28" />
+        </Style>
+
+        <Style x:Key="ParagraphTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,0,10" />
+            <Setter Property="Foreground" Value="#66FFFFFF" />
         </Style>
     </Page.Resources>
 
@@ -47,6 +53,35 @@
                             </Border>
                         </StackPanel>
                     </ScrollViewer>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Composition - Parallax" Margin="10,0,10,10">
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <Image x:Name="ParallaxImage" Source="../Assets/Media/parallax.jpg" Stretch="None" />
+
+                    <ScrollViewer Background="#77000000">
+                        <interactivity:Interaction.Behaviors>
+                            <winComposition:UIElementParallaxEffectBehavior ParallaxElement="{Binding ElementName=ParallaxImage}" />
+                        </interactivity:Interaction.Behaviors>
+
+                        <StackPanel Margin="12,0">
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="The pride volunteers behind a panel. The confidence returns under the toast! The cigarette freezes behind the stare. The lawn crawls past an inevitable skill. The wrapped repertoire strains." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Any proof screams under a reluctant vinyl. Near the ocean sneaks the directive code. A south targets the discrete creator. A compressed day disregards another patched crisp. The boy orbits after your bulb." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Why does a wee taxi swallow a medieval material? Can an ethic crisp exercise on top of a holy? Why won't a tidy photocopy bracket each sequel? When can a producer silence the request? The snobbery bounces on top of the metal. The reform parts a giving editor." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Our applicant argues beneath an uncle! A loyal continent rules throughout the paradox. Can the mankind pink the throat? Every arrival subsidizes a driver without the empty philosophy. A slave cooperates in a hook." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="How will the bay filter another junk? The puzzled turnround speculates. The customer lifts a mistake. A silence pants beneath the creep. Should the approximate monarch predict the romantic fog? How does the preview absorb our bankrupt?" TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Why won't a wonderful synonym stamp an equilibrium? Each fool rots? A mystic stages this orchestra. The cake toes the line. Below a catholic parades the muck. A valley fakes a bandwagon." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="A conduct connects an exempt charm. An ordinary curve pardons the ward on top of a chicken cotton. The difficult carbon simulates the chestnut across the unlucky handbook. The intellect comprehends an interfering attribute. Her attribute enables an executive." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="A dressed hardship tanks the groan beside the spatial preface. The human marriage cores the tiger. The community mask promises a lunchtime. The destined vein redirects a breach." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="When will a doubt offend beneath my hero? James offends the passenger into a punch. Why won't James pulse? Behind the backward venture slides the aging apple. A past eater spreads James." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="A prize lord defines Leon inside the poetic arch. Does Leon schedule the employer? Can Leon institute the dedicated spike? In Leon breezes the clever engine. A megabyte glows into the tutorial!" TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Will Riccardo initialize this cloth? The circle finishes on top of a galaxy. Any stomach services an apology without a routed freeze. Should the disturbance pump inside Riccardo?" TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="The splitting agony recalls Ben without the unsuitable damned. A bull photocopy trips behind a gasoline. Ben poses above a receiver. The hog dines next to the soundtrack. A carriage exploits a few alcoholic below a grass." TextWrapping="WrapWholeWords" />
+                            <TextBlock Style="{StaticResource ParagraphTextBlockStyle}" Text="Random text generated from http://watchout4snakes.com/wo4snakes/Random/RandomParagraph" TextWrapping="WrapWholeWords" />
+                        </StackPanel>
+                    </ScrollViewer>
+
                 </Grid>
             </PivotItem>
         </Pivot>
