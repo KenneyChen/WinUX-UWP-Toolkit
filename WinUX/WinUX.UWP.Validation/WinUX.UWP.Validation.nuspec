@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.3.4</version>
+    <version>1.3.5</version>
     <title>WinUX.UWP.Validation</title>
     <authors>James Croft</authors>
     <owners>James Croft</owners>
@@ -15,4 +15,10 @@
     <copyright>Copyright (c) 2016 James Croft</copyright>
     <tags>WinUX UWP Validation Rules TextBox Controls XAML UX Extensions Toolkit .NET</tags>
   </metadata>
+  <files>
+    <file src="bin\Release\Themes\Generic.xbf" target="lib\.NETCore50\WinUX.UWP.Validation\Themes\Generic.xbf" />
+    <file src="bin\Release\WinUX.UWP.Validation.dll" target="lib\.NETCore50\WinUX.UWP.Validation.dll" />
+    <file src="bin\Release\WinUX.UWP.Validation.pri" target="lib\.NETCore50\WinUX.UWP.Validation.pri" />
+    <file src="bin\Release\WinUX.UWP.Validation.xr.xml" target="lib\.NETCore50\WinUX.UWP.Validation\WinUX.UWP.Validation.xr.xml" />
+  </files>
 </package>

@@ -104,7 +104,6 @@
     <Compile Include="Test\TestControl.xaml.cs">
       <DependentUpon>TestControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\BehaviorsViewModel.cs" />
     <Compile Include="Views\BehaviorsView.xaml.cs">
       <DependentUpon>BehaviorsView.xaml</DependentUpon>
     </Compile>
@@ -196,6 +195,9 @@
       <Project>{F77C5AE3-4028-4AD7-A4D2-2CB4FCA60032}</Project>
       <Name>WinUX.UWP.ValueConverters</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
