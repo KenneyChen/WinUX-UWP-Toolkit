@@ -13,27 +13,33 @@
             </TransitionCollection>
         </Grid.ChildrenTransitions>
 
-        <Pivot>
+        <Pivot IsLocked="True">
             <PivotItem Header="WinUX Samples">
                 <ScrollViewer>
                     <StackPanel>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Behaviors" Click="OnBehaviorsClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="Behaviors" Click="OnBehaviorsClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Controls" Click="OnControlsClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="Controls" Click="OnControlsClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="StateTriggers" Click="OnStateTriggersClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="StateTriggers" Click="OnStateTriggersClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Validation" Click="OnValidationClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="Validation" Click="OnValidationClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="ValueConverters" Click="OnValueConvertersClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="ValueConverters" Click="OnValueConvertersClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                         <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource SystemControlForegroundAccentBrush}" Padding="12">
-                            <Button Content="Throw exception" Click="OnThrowExceptionClicked" HorizontalAlignment="Stretch" />
+                            <Button Content="Throw exception" Click="OnThrowExceptionClicked"
+                                    Style="{StaticResource ApplicationMenuButtonStyle}" />
                         </Border>
                     </StackPanel>
                 </ScrollViewer>
